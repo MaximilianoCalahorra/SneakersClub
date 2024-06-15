@@ -37,7 +37,7 @@ public interface IStockRepository extends JpaRepository<Stock, Serializable>
 	public abstract List<Stock> findByActualAmountGreaterThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos los stocks con una cantidad actual menor o igual a determinada cantidad:
-	@Query("SELECT s FROM Stock s INNER JOIN FETCH s.product WHERE s.actualAmount =< (:amount)")
+	@Query("SELECT s FROM Stock s INNER JOIN FETCH s.product WHERE s.actualAmount <= (:amount)")
 	public abstract List<Stock> findByActualAmountLessThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos los stocks con una cantidad actual entre dos cantidades determinadas (extremos incluidos):

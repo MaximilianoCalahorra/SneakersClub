@@ -37,11 +37,11 @@ public interface ISupplyOrderRepository extends JpaRepository<SupplyOrder, Seria
 	public abstract List<SupplyOrder> findByAmountGreaterThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos los pedidos de aprovisionamiento con una cantidad menor o igual a una determinada:
-	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.amount =< (:amount)")
+	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.amount <= (:amount)")
 	public abstract List<SupplyOrder> findByAmountLessThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos los pedidos de aprovisionamiento con una cantidad entre un rango (extremos incluidos):
-	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.amount >= (:minimumAmount) AND so.amount =< (:maximumAmount)")
+	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.amount >= (:minimumAmount) AND so.amount <= (:maximumAmount)")
 	public abstract List<SupplyOrder> findByAmountRange(@Param("minimumAmount")int minimumAmount, @Param("maximumAmount")int maximumAmount);
 
 	//Encontramos los pedidos de aprovisionamiento con determinado estado:

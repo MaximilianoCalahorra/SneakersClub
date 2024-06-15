@@ -34,7 +34,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	public abstract List<Purchase> findByPurchasePriceGreaterThanOrEqualTo(@Param("purchasePrice")double purchasePrice);
 	
 	//Encontramos las compras de un precio de compra menor o igual a uno determinado:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.purchasePrice =< (:purchasePrice)")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.purchasePrice <= (:purchasePrice)")
 	public abstract List<Purchase> findByPurchasePriceLessThanOrEqualTo(@Param("purchasePrice")double purchasePrice);
 	
 	//Encontramos las compras de un precio de compra mayor o igual a uno mínimo y menor o igual a uno máximo:
@@ -52,7 +52,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	public abstract List<Purchase> findByAmountGreaterThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos las compras de una cantidad menor o igual a una determinada:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.amount =< (:amount)")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.amount <= (:amount)")
 	public abstract List<Purchase> findByAmountLessThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos las compras de una cantidad mayor o igual a una mínima y menor o igual a una máxima determinadas:
@@ -65,7 +65,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	public abstract List<Purchase> findByMethodOfPay(@Param("methodOfPay")String methodOfPay);
 	
 	//Encontramos las compras de una fecha y hora determinada:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime = '(:dateTime)")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime = '(:dateTime)'")
 	public abstract List<Purchase> findByDateTime(@Param("dateTime")LocalDateTime dateTime);
 	
 	//Encontramos las compras de una fecha y hora posterior o igual a una determinada:
@@ -73,7 +73,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	public abstract List<Purchase> findByDateTimeGreaterThanOrEqualTo(@Param("dateTime")LocalDateTime dateTime);
 	
 	//Encontramos las compras de una fecha y hora anterior o igual a una determinada:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime =< '(:dateTime)'")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime <= '(:dateTime)'")
 	public abstract List<Purchase> findByDateTimeLessThanOrEqualTo(@Param("dateTime")LocalDateTime dateTime);
 	
 	//Encontramos las compras de una fecha y hora dentro de un intervalo (extremos incluidos):

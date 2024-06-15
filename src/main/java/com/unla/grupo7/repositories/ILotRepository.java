@@ -30,7 +30,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	public abstract List<Lot> findByReceptionDateAfterOrEqualThan(@Param("receptionDate")LocalDateTime receptionDate);
 	
 	//Encontramos los lotes con fecha de recepción anterior o igual a a una fecha de recepción determinada:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate =< '(:receptionDate)'")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate <= '(:receptionDate)'")
 	public abstract List<Lot> findByReceptionDateBeforeOrEqualThan(@Param("receptionDate")LocalDateTime receptionDate);
 	
 	//Encontramos los lotes con una fecha de recepción entre un intervalo de fechas (extremos incluidos):
@@ -44,7 +44,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	public abstract List<Lot> findByExistingAmount(@Param("amount")int amount);
 	
 	//Encontramos los lotes con cantidad existente menor o igual a una cantidad determinada:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.existingAmount =< (:amount)")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.existingAmount <= (:amount)")
 	public abstract List<Lot> findByExistingAmountLessThanOrEqualTo(@Param("amount")int amount);
 	
 	//Encontramos los lotes con cantidad existente mayor o igual a una cantidad determinada:
@@ -53,7 +53,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	
 	//Encontramos los lotes con cantidad existente mayor o igual a una cantidad mínima determinada y menor o igual a una cantidad máxima
 	//determinada (extremos incluidos):
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.existingAmount >= (:minimumAmount) AND l.existingAmount =< (:maximumAmount)")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.existingAmount >= (:minimumAmount) AND l.existingAmount <= (:maximumAmount)")
 	public abstract List<Lot> findByExistingAmountRange(@Param("minimumAmount")int minimumAmount, @Param("maximumAmount")int maximumAmount);
 	
 	//Encontramos los lotes con determinado precio de venta:
@@ -65,7 +65,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	public abstract List<Lot> findByPurchasePriceGreaterThanOrEqualTo(@Param("purchasePrice")double purchasePrice);
 	
 	//Encontramos los lotes con un precio de venta menor o igual a uno determinado:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.purchasePrice =< (:purchasePrice)")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.purchasePrice <= (:purchasePrice)")
 	public abstract List<Lot> findByPurchasePriceLessThanOrEqualTo(@Param("purchasePrice")double purchasePrice);
 	
 	//Encontramos los lotes con un precio de venta entre un precio de venta mínimo y y un precio de venta máximo:

@@ -39,11 +39,11 @@ public interface IProductRepository extends JpaRepository<Product, Serializable>
 	public abstract List<Product> findBySalePriceGreaterThanOrEqualTo(@Param("salePrice")double salePrice); 
 	
 	//Encontramos los productos que tengan un precio de venta menor o igual a uno determinado:
-	@Query("SELECT p FROM Product p WHERE p.salePrice =< (:salePrice)")
+	@Query("SELECT p FROM Product p WHERE p.salePrice <= (:salePrice)")
 	public abstract List<Product> findBySalePriceLessThanOrEqualTo(@Param("salePrice")double salePrice); 
 	
 	//Encontramos los productos que tengan un precio de venta mayor o igual a uno mínimo determinado y menor o igual a uno máximo determinado:
-	@Query("SELECT p FROM Product p WHERE p.salePrice >= (:minimumSalePrice) AND p.salePrice =< (:maximumSalePrice)")
+	@Query("SELECT p FROM Product p WHERE p.salePrice >= (:minimumSalePrice) AND p.salePrice <= (:maximumSalePrice)")
 	public abstract List<Product> findBySalePriceRange(@Param("minimumSalePrice")double minimumSalePrice, 
 													   @Param("maximumSalePrice")double maximumSalePrice); 
 }

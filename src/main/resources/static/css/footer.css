@@ -1,0 +1,45 @@
+/* -------------------------------------- */
+
+/* Estilos del FOOTER */
+.contenedor{
+
+    margin: 25px;
+    background-color: rgb(34, 40, 49);
+    border-radius: 22px;
+	box-shadow: 0px 0px 48px black;
+
+}
+.container {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;    
+
+}
+
+.container .logo img {
+    margin: 5px;
+    border-radius: 16px;
+    width: 140px;
+    
+}
+
+.container h3 {
+    color: #f2f2f2;
+    font-family: 'Dancing Script', cursive;
+    font-size: 17px;
+
+}
+
+.container p {
+    color: #f2f2f2;
+
+}
+
+.container .datos-admin {
+    color: #f2f2f2;
+    
+    text-align: center;
+}
+/* -------------------------------------- */

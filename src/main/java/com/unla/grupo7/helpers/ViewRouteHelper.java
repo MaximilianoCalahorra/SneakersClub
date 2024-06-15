@@ -5,6 +5,7 @@ public class ViewRouteHelper {
 	//HOME
 	public final static String INDEX = "home/index";
 	public final static String HELLO = "home/hello";
+	public final static String STORES = "home/stores";
 	
 	//USER
 	public final static String USER_LOGIN = "user/login";
@@ -12,5 +13,5 @@ public class ViewRouteHelper {
 	
 	/**** Redirects ****/
 	public final static String ROUTE = "/index";
-	
+
 }

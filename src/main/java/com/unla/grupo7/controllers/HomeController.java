@@ -13,6 +13,7 @@ import com.unla.grupo7.helpers.ViewRouteHelper;
 @RequestMapping("/")
 public class HomeController {
 
+	
 	@GetMapping("/index")
 	public ModelAndView index() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.INDEX);
@@ -32,4 +33,12 @@ public class HomeController {
 	public RedirectView redirectToHomeIndex() {
 		return new RedirectView(ViewRouteHelper.ROUTE);
 	}
+	
+	@GetMapping("/stores")
+	public ModelAndView stores() {
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.STORES);
+
+		return modelAndView;
+	}
+	
 }

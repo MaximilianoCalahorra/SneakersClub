@@ -3,53 +3,140 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Grupo7</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="assets/img/iconoPagina.jpg" />
+
+        <link href="/css/index.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
-		<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-				Hello OO2
-			</div>
-		 </section>
-		 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <body >
+		<div>
+		    <header class='header'>
+		        <div class='logo'>
+		            <img src="assets/img/iconoPagina.jpg" alt="logo-img" />
+		        </div>
+		        <nav>
+		            <ul class='nav-links'>
+						<a href="/index" class="link">Home</a>
+						<a href="/stores "class="link">Stores</a>
+						<a href="./Pages/AboutUs.html" class="link">About us</a>
+						<a href="./Pages/Shoes.html" class="link">Our Shoes</a>
+						<a href="./Pages/Gallery.html" class="link">Gallery</a>
+		            </ul>
+		        </nav>
+				<a href="/logout" class="btn"><button>Logout</button></a>
+		    </header>
+		</div>
+       
+		 <!-- ----------------------------------------------------------------------- -->
+
+		    <!-- Seccion 1 del inicio (Contacto) -->
+		    <section class="contact-section-1">
+		        
+		        <h1 class="title-contact-section">The shoe you want, the shoe we have.</h1>
+		        <h3 class="title-contact-section">Contact us for more info!</h3>
+		        <a href="./Pages/ContactUs.html" class="button-contact-section">
+		            <button>Contact Us</button>
+		        </a>
+
+		    </section>
+		    <!-- ----------------------------------------------------------------------- -->
+
+		    <!-- Seccion 2 del inicio (About Us) -->
+		    <section class="about-us-section">
+		        <div class="img-about-us-section"> 
+		            <img src="assets/img/packaging.jpeg" alt="packaging">
+		        </div>
+		        
+		        
+		        <div class="info-about-us-section">
+		            <h1>How can we help you?</h1>
+		            <p>
+		                Our store boasts a wide variety of sneakers, catering to different styles, preferences, and budgets. 
+		                Whether you're a sports enthusiast, a fashion-forward individual, or simply seeking comfortable everyday shoes, we have something for everyone. 
+		                We carefully curate our collection, ensuring that we offer the latest trends and popular brands, as well as classic and timeless designs.
+		                We understand that price is an important factor when making purchasing decisions. That's why we offer competitive pricing on all our sneakers. 
+		                We believe in providing value for money without compromising on quality. Our goal is to make premium sneakers accessible to a wide range of customers, ensuring that you get the best deal possible.   
+		            </p>
+		            <a href="./Pages/AboutUs.html" class="button-about-us-section">
+		                <button>Know more about us</button>
+		            </a>
+		        </div>
+
+		    </section>
+		    <!-- ----------------------------------------------------------------------- -->
+
+		    <!-- Seccion 3 del inicio (Shoes) -->
+		    <div class="title-shoes-section">
+		        <h1>Our main brands</h1>
+		    </div>
+
+		    <section class="shoes-section">
+		        
+		        <div class="model-shoes-section">
+		            <h1>Nike</h1>
+		            <img src="assets/img/nikeLogo.png" alt="">
+		        </div>
+		        
+		        <div class="model-shoes-section">
+		            <h1>Converse</h1>
+		            <img src="assets/img/converseLogo.png" alt="">
+		        </div>
+		        <div class="model-shoes-section">
+		            <h1>Adidas</h1>
+		            <img src="assets/img/adidasLogo.png" alt="">
+		        </div>
+
+		    </section>
+
+		        <a href="./Pages/Shoes.html" class="button-shoes-section">
+		            <button>See our shoes</button>
+		        </a>
+		    <!-- ----------------------------------------------------------------------- -->
+
+		     <!-- Seccion 4 del inicio (Gallery) -->
+		     <section class="gallery-section">
+		        
+		        <h1 class="title-gallery-section">Pictures of our best models here!</h1>
+		        <a href="./Pages/Gallery.html" class="button-gallery-section">
+		            <button>Gallery</button>
+		        </a>
+
+		    </section>
+		    <!-- ----------------------------------------------------------------------- -->
+
+		    <!-- Footer -->
+			<div class='contenedor'>
+
+			      
+			      <div class='container'>
+
+			          <div class='logo'>
+
+			              <img src="assets/img/iconoPagina.jpg" alt="logo-img" />
+
+			          </div>
+
+			          <div class='datos-admin'>
+
+			              <h4>Datos Administrativos</h4>
+
+			              <p>Razón Social: CoverCare
+			                  <br />
+			                  Cuit: 30-71119543-9
+			                  <br />
+			                  Convenio Multilateral: 902-539472-7
+			                  <br />
+			                  Domicilio: Madariaga 1364 Parque Industrial de Almirante Brown.
+			              </p>
+
+			          </div>
+
+			      </div>
+			      </div>
+		    <!-- ----------------------------------------------------------------------- -->
+
+		    
+		</body>
     </body>
 </html>

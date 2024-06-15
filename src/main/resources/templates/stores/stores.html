@@ -6,26 +6,13 @@
 		<!-- Bootstrap core CSS -->
 		<!--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />-->
 		<link href="/css/stores.css" rel="stylesheet" />
+		<link href="/css/navBar.css" rel="stylesheet" />
+		<link href="/css/footer.css" rel="stylesheet" />
 	</head>
 	<body>
 	  
-		<div>
-		    <header class='header'>
-		        <div class='logo'>
-		            <img src="assets/img/iconoPagina.jpg" alt="logo-img" />
-		        </div>
-		        <nav>
-		            <ul class='nav-links'>
-						<a href="/index" class="link">Home</a>
-						<a href="/stores "class="link">Stores</a>
-						<a href="./Pages/AboutUs.html" class="link">About us</a>
-						<a href="./Pages/Shoes.html" class="link">Our Shoes</a>
-						<a href="./Pages/Gallery.html" class="link">Gallery</a>
-		            </ul>
-		        </nav>
-				<a href="/logout" class="btn"><button>Logout</button></a>
-		    </header>
-		</div>
+		<div th:include="navBar/navBar.html::div-header"></div>
+		
 		
 		<main>
 			<div class="title">
@@ -35,33 +22,48 @@
 			<div class="container">
 				
 				<div class="location">
-					<div>
-						<a data-qa="FcnyMapLink" data-testid="store-maps" rel="noopener noreferrer" target="_blank" href="https://goo.gl/maps/CWWZqs5KU5Q1SfAk9" class="FlightClubStore__MapLink-fc-web__sc-1eb98bx-3 fUETEL"><img src="/static/map-group.png" alt="Flight Club New York Google Map Pin"></a>
+					<div class="ubi">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3364082257804!2d-73.9909292!3d40.7326226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259996b5c4775%3A0x6f6c00aa458a61a8!2s812%20Broadway%2C%20New%20York%2C%20NY%2010003%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1718466011163!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
+					
 					<div>
 						<h2>Flight Club New York</h2>
-						<a target="_blank" href="https://goo.gl/maps/CWWZqs5KU5Q1SfAk9" data-qa="FcnyStoreAddress" class="FlightClubStore__AddressLink-fc-web__sc-1eb98bx-4 hmNLpK"><address class="FlightClubStore__StoreAddress-fc-web__sc-1eb98bx-7 HnkVf">812 Broadway<br>New York, NY 10003</address>
-						</a>
+						<a target="_blank" href="https://goo.gl/maps/CWWZqs5KU5Q1SfAk9" data-qa="FcnyStoreAddress" class="FlightClubStore__AddressLink-fc-web__sc-1eb98bx-4 hmNLpK"><address class="FlightClubStore__StoreAddress-fc-web__sc-1eb98bx-7 HnkVf">812 Broadway<br>New York, NY 10003</address></a>
 						<h3>Store Hours</h3>
+						<p>Monday - Sunday 12AM - 7PM ET</p>
 						<h3>Consignments</h3>
+						<p>Monday - Sunday 11AM - 5PM ET</p>
 					</div>
 						
 				</div>
 				
 				<div class="location">
-					<div>
+						<div class="ubi">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.5499235906177!2d-118.36169330000001!3d34.0810501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2beccef28d549%3A0x14edf3008bf42a3b!2s535%20N%20Fairfax%20Ave%2C%20Los%20Angeles%2C%20CA%2090036%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1718466054282!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						</div>
+						<div>
 						<h2>Flight Club Los Angeles</h2>
-						<a data-qa="FclaMapLink" data-testid="store-maps" rel="noopener noreferrer" target="_blank" href="https://goo.gl/maps/yHG939enGFoCbLxz5" class="FlightClubStore__MapLink-fc-web__sc-1eb98bx-3 fUETEL"><img src="/static/map-group.png" alt="Flight Club Los Angeles Google Map Pin"></a>						<h3>Store Hours</h3>
+						<a target="_blank" href="https://goo.gl/maps/yHG939enGFoCbLxz5" data-qa="FclaStoreAddress" class="FlightClubStore__AddressLink-fc-web__sc-1eb98bx-4 hmNLpK"><address class="FlightClubStore__StoreAddress-fc-web__sc-1eb98bx-7 HnkVf">535 N Fairfax Ave<br>Los Angeles, CA 90036</address></a>
+						<h3>Store Hours</h3>
+						<p>Monday - Sunday 12AM - 7PM PT</p>
 						<h3>Consignments</h3>
+						<p>50. N Fairfax Ave</p>
+						<p>Monday - Sunday 11AM - 5PM PT</p>
 					</div>
 							
 				</div>
 				
 				<div class="location">
-					<div>
+						<div class="ubi">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7127553296973!2d-80.1936525!3d25.8130489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b150d72583af%3A0x54a2cdd171cbea01!2s3910%20NE%201st%20Ave%2C%20Miami%2C%20FL%2033137%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1718466072382!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						</div>
+						<div>
 						<h2>Flight Club Miami</h2>
-						<a data-qa="FcmiaMapLink" data-testid="store-maps" rel="noopener noreferrer" target="_blank" href="https://goo.gl/maps/F4KRvHaPGw5oMD1N8" class="FlightClubStore__MapLink-fc-web__sc-1eb98bx-3 fUETEL"><img src="/static/map-group.png" alt="Flight Club Miami Google Map Pin"></a>						<h3>Store Hours</h3>
+						<a target="_blank" href="https://goo.gl/maps/F4KRvHaPGw5oMD1N8" data-qa="FcmiaStoreAddress" class="FlightClubStore__AddressLink-fc-web__sc-1eb98bx-4 hmNLpK"><address class="FlightClubStore__StoreAddress-fc-web__sc-1eb98bx-7 HnkVf">3910 NE 1st Ave<br>Miami, FL 33137</address></a>
+						<h3>Store Hours</h3>
+						<p>Monday - Sunday 12AM - 7PM ET</p>
+						<p>Sunday 12AM - 6PM ET</p>
 						<h3>Consignments</h3>
+						<p>Monday - Sunday 12AM - 6PM ET</p>
+						<p>Sunday 12AM - 5PM ET</p>
 					</div>		
 								
 								
@@ -76,35 +78,7 @@
 		
 		<!-- ----------------------------------------------------------------------- -->
 
-		<!-- Footer -->
-		<div class='contenedor'>
-
-		      
-		      <div class='container'>
-
-		          <div class='logo'>
-
-		              <img src="assets/img/iconoPagina.jpg" alt="logo-img" />
-
-		          </div>
-
-		          <div class='datos-admin'>
-
-		              <h4>Datos Administrativos</h4>
-
-		              <p>Razón Social: CoverCare
-		                  <br />
-		                  Cuit: 30-71119543-9
-		                  <br />
-		                  Convenio Multilateral: 902-539472-7
-		                  <br />
-		                  Domicilio: Madariaga 1364 Parque Industrial de Almirante Brown.
-		              </p>
-
-		          </div>
-
-		      </div>
-		      </div>
+		<div th:include="footer/footer.html::footer"></div>
 		<!-- ----------------------------------------------------------------------- -->
 
 		

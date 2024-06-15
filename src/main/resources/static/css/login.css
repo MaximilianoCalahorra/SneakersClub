@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	background-color: black;
+}
+
+/* -------------------------------------------- */
+    /* formulario */
+main form{
+    width: 400px;
+    background-color: grey;
+    backdrop-filter: blur(22px);
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    box-shadow: 0px 0px 45px rgb(0, 136, 255);
+	
+
+}
+main form h4{
+    font-size: 28px;
+    margin-bottom: 20px;
+	background-color: grey;
+
+}
+main form .controls{
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+
+}
+main form p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+	background-color: grey;
+
+}
+main form a{
+    color: white;
+    text-decoration: none;
+
+}
+main form a:hover{
+    color: white;
+    text-decoration: underline;
+
+}
+main form .botons{
+    width: 100%;
+    background-color: rgb(0, 136, 255);
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    transition: 0.5s;
+
+}
+main form .botons:hover{
+    box-shadow: 0px 0px 25px rgb(0, 136, 255);
+    transition: 0.5s;
+
+}

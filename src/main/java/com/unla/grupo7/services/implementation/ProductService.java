@@ -110,7 +110,7 @@ public class ProductService implements IProductService
 	@Override
 	public Product insert(Product product) throws Exception
 	{
-		if(findByCode(product.getCode()) != null) 
+		if(productRepository.findByCode(product.getCode()) != null) 
 		{
 			throw new Exception("ERROR the product is existent");
 		}

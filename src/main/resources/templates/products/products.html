@@ -15,15 +15,14 @@
     </head>
     <body >
 		
-		<div th:include="navBar/navBar.html::div-header"></div>
+		<div th:include="navBar/navBarUser.html::div-header"></div>
 		
 		
-		<div th:each="producto : ${productos}">
-			<h2 th:text="${producto.nombre}"> Nombre del producto </h2> 
-			<p th:text="${producto.descripcion}"> Descripcion del Producto </p>
-			<p th:text="${prodcuto.precio}"> Precio del Producto </p>
+		<div th:each="product : ${listaProducts}">
+			<h2 th:text="${product.name}"> Nombre del producto </h2> 
+			<p th:text="${product.description}"> Descripcion del Producto </p>
+			<p th:text="${product.salePrice}"> Precio del Producto </p>
 		</div>
-		
 		
 		<div class="container">
 			<div class="container-divs">	

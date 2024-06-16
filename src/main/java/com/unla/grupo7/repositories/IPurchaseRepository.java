@@ -39,7 +39,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	
 	//Encontramos las compras de un precio de compra mayor o igual a uno mínimo y menor o igual a uno máximo:
 	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.purchasePrice >= (:minimumPurchasePrice)"
-		   + " AND p.purchasePrice =< (:maximumPurchasePrice)")
+		   + " AND p.purchasePrice <= (:maximumPurchasePrice)")
 	public abstract List<Purchase> findByPurchasePriceRange(@Param("minimumPurchasePrice")double minimumPurchasePrice,
 															@Param("maximumPurchasePrice")double maximumPurchasePrice);
 	
@@ -57,7 +57,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	
 	//Encontramos las compras de una cantidad mayor o igual a una mínima y menor o igual a una máxima determinadas:
 	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.amount >= (:minimumAmount) AND "
-		   + "p.amount =< (:maximumAmount)")
+		   + "p.amount <= (:maximumAmount)")
 	public abstract List<Purchase> findByAmountRange(@Param("minimumAmount")int minimumAmount, @Param("maximumAmount")int maximimumAmount);
 	
 	//Encontramos las compras de un medio de pago determinado:
@@ -65,20 +65,20 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	public abstract List<Purchase> findByMethodOfPay(@Param("methodOfPay")String methodOfPay);
 	
 	//Encontramos las compras de una fecha y hora determinada:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime = '(:dateTime)'")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime = (:dateTime)")
 	public abstract List<Purchase> findByDateTime(@Param("dateTime")LocalDateTime dateTime);
 	
 	//Encontramos las compras de una fecha y hora posterior o igual a una determinada:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime >= '(:dateTime)'")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime >= (:dateTime)")
 	public abstract List<Purchase> findByDateTimeGreaterThanOrEqualTo(@Param("dateTime")LocalDateTime dateTime);
 	
 	//Encontramos las compras de una fecha y hora anterior o igual a una determinada:
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime <= '(:dateTime)'")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime <= (:dateTime)")
 	public abstract List<Purchase> findByDateTimeLessThanOrEqualTo(@Param("dateTime")LocalDateTime dateTime);
 	
 	//Encontramos las compras de una fecha y hora dentro de un intervalo (extremos incluidos):
-	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime BETWEEN '(:fromDateTime)' AND "
-		   + "'(:untilDateTime)'")
+	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.dateTime BETWEEN (:fromDateTime) AND "
+		   + "(:untilDateTime)")
 	public abstract List<Purchase> findByDateTimeRange(@Param("fromDateTime")LocalDateTime fromDateTime, 
 													   @Param("untilDateTime")LocalDateTime untilDateTime);
 }

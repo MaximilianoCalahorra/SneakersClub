@@ -2,7 +2,6 @@ package com.unla.grupo7.services;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import com.unla.grupo7.entities.Lot;
 
@@ -11,7 +10,7 @@ public interface ILotService
 	///Encontrar:
 	   
 	//Encontramos el lote con determinado id o lanzamos una excepción por lote inexistente:
-	public Optional<Lot> findByLotId(int lotId) throws Exception;
+	public Lot findByLotId(int lotId) throws Exception;
 		
 	//Encontramos los lotes con determinada fecha de recepción:
 	public List<Lot> findByReceptionDate(LocalDateTime receptionDate);

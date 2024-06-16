@@ -22,20 +22,20 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	public abstract Lot findByLotId(@Param("lotId") int lotId);
 	
 	//Encontramos los lotes con determinada fecha de recepción:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate = '(:receptionDate)'")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate = (:receptionDate)")
 	public abstract List<Lot> findByReceptionDate(@Param("receptionDate")LocalDateTime receptionDate);
 	
 	//Encontramos los lotes con fecha de recepción posterior o igual a una fecha de recepción determinada:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate >= '(:receptionDate)'")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate >= (:receptionDate)")
 	public abstract List<Lot> findByReceptionDateAfterOrEqualThan(@Param("receptionDate")LocalDateTime receptionDate);
 	
 	//Encontramos los lotes con fecha de recepción anterior o igual a a una fecha de recepción determinada:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate <= '(:receptionDate)'")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate <= (:receptionDate)")
 	public abstract List<Lot> findByReceptionDateBeforeOrEqualThan(@Param("receptionDate")LocalDateTime receptionDate);
 	
 	//Encontramos los lotes con una fecha de recepción entre un intervalo de fechas (extremos incluidos):
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate BETWEEN '(:fromReceptionDate)' AND"
-		   + " '(:untilReceptionDate)'")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate BETWEEN (:fromReceptionDate) AND"
+		   + " (:untilReceptionDate)")
 	public abstract List<Lot> findByReceptionDateRange(@Param("fromReceptionDate")LocalDateTime fromReceptionDate,
 													   @Param("untilReceptionDate")LocalDateTime untilReceptionDate);
 	
@@ -70,7 +70,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	
 	//Encontramos los lotes con un precio de venta entre un precio de venta mínimo y y un precio de venta máximo:
 	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.purchasePrice >= (:minimumPurchasePrice) AND"
-		   + " l.purchasePrice =< (:maximumPurchasePrice)")
+		   + " l.purchasePrice <= (:maximumPurchasePrice)")
 	public abstract List<Lot> findByPurchasePriceRange(@Param("minimumPurchasePrice")double minimumPurchasePrice,
 													   @Param("maximumPurchasePrice")double maximumPurchasePrice);
 }

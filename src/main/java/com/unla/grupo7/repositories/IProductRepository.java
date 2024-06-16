@@ -2,7 +2,6 @@ package com.unla.grupo7.repositories;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,13 +16,13 @@ public interface IProductRepository extends JpaRepository<Product, Serializable>
 	///Encontrar:
 	
 	//Encontramos el producto con determinado id:
-	public abstract Optional<Product> findByProductId(int productId);
+	public abstract Product findByProductId(int productId);
 	
 	//Encontramos el producto con determinado código:
-	public abstract Optional<Product> findByCode(String code); 
+	public abstract Product findByCode(String code); 
 	
 	//Encontramos el producto con determinado nombre:
-	public abstract Optional<Product> findByName(String name); 
+	public abstract Product findByName(String name); 
 	
 	//Encontramos los productos con determinada marca:
 	public abstract List<Product> findByBrand(String brand); 

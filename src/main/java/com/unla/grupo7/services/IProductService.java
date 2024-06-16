@@ -1,7 +1,6 @@
 package com.unla.grupo7.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.unla.grupo7.entities.Product;
 
@@ -10,7 +9,7 @@ public interface IProductService
 	///Encontrar:
 	
 	//Encontramos el producto con determinado id o lanzamos una excepción por producto inexistente:
-	public Optional<Product> findByProductId(int productId) throws Exception;
+	public Product findByProductId(int productId) throws Exception;
 	
 	//Encontramos el producto con determinado código o lanzamos una excepción por producto inexistente:
 	public Product findByCode(String code) throws Exception; 

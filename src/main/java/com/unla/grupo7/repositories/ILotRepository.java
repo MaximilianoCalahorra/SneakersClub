@@ -19,7 +19,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	   
 	//Encontramos el lote con determinado id:
 	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.lotId = (:lotId)")
-	public abstract Optional<Lot> findByLotId(@Param("lotId") int lotId);
+	public abstract Lot findByLotId(@Param("lotId") int lotId);
 	
 	//Encontramos los lotes con determinada fecha de recepción:
 	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate = '(:receptionDate)'")

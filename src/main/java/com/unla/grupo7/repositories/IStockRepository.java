@@ -2,7 +2,6 @@ package com.unla.grupo7.repositories;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,11 +17,11 @@ public interface IStockRepository extends JpaRepository<Stock, Serializable>
 	
 	//Encontramos el stock con determinado id:
 	@Query("SELECT s FROM Stock s INNER JOIN FETCH s.product WHERE s.stockId = (:stockId)")
-	public abstract Optional<Stock> findByStockId(@Param("stockId")int stockId);
+	public abstract Stock findByStockId(@Param("stockId")int stockId);
 	
 	//Encontramos el stock con determinado producto:
 	@Query("SELECT s FROM Stock s INNER JOIN FETCH s.product p WHERE p.productId = (:productId)")
-	public abstract Optional<Stock> findByProduct(@Param("productId")int productId);
+	public abstract Stock findByProduct(@Param("productId")int productId);
 	
 	//Encontramos los stock con determinada cantidad mínima:
 	@Query("SELECT s FROM Stock s INNER JOIN FETCH s.product WHERE s.minimumAmount = (:minimumAmount)")

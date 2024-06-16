@@ -123,6 +123,21 @@ public class LotService implements ILotService{
 		
 	}
 
+
+	@Override
+	public boolean remove(int lotId) {
+		
+		try {
+			
+			lotRepository.deleteById(lotId);
+			return true;
+			
+		}catch(Exception e){
+			
+			return false;
+		}
+	}
+
 	
 	
 	

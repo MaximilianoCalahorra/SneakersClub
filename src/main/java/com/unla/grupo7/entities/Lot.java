@@ -29,7 +29,6 @@ public class Lot {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int lotId;
 	
-	
 	//cada lote tiene su stock, clave foranea 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="stock_id", nullable=false)

@@ -10,10 +10,10 @@ public interface IStockService
 	///Encontrar:
 	
 	//Encontramos el stock con determinado id o lanzamos una excepción por stock inexistente:
-	public Optional<Stock> findByStockId(int stockId) throws Exception;
+	public Stock findByStockId(int stockId) throws Exception;
 		
 	//Encontramos el stock con determinado producto o lanzamos una excepción por stock inexistente:
-	public Optional<Stock> findByProduct(int productId) throws Exception;
+	public Stock findByProduct(int productId) throws Exception;
 		
 	//Encontramos los stock con determinada cantidad mínima:
 	public List<Stock> findByMinimumAmount(int minimumAmount);

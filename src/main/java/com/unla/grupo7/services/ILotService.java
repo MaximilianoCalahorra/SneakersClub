@@ -49,6 +49,9 @@ public interface ILotService
 	//Encontramos los lotes con un precio de venta entre un precio de venta mínimo y y un precio de venta máximo:
 	public List<Lot> findByPurchasePriceRange(double minimumPurchasePrice, double maximumPurchasePrice);
 	
+	//Encontramos los lotes con determinado stock:
+	public List<Lot> findByStock(int stockId);
+	
 	///Obtener:
 	
 	//Obtenemos todos los lotes:
@@ -57,8 +60,12 @@ public interface ILotService
 	///Agregar:
 	
 	//Agregamos un lote:
+<<<<<<< HEAD
 	public Lot insert(Lot lot);
 	
 	//remove 
 	public boolean remove(int lotId);
+=======
+	public Lot insertOrUpdate(Lot lot);
+>>>>>>> 832ae97d02f68b85da5cbbf6075de2260cdd7ff8
 }

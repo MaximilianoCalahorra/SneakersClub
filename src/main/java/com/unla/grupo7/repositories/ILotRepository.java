@@ -2,7 +2,6 @@ package com.unla.grupo7.repositories;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 import java.time.LocalDateTime;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -73,4 +72,8 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 		   + " l.purchasePrice <= (:maximumPurchasePrice)")
 	public abstract List<Lot> findByPurchasePriceRange(@Param("minimumPurchasePrice")double minimumPurchasePrice,
 													   @Param("maximumPurchasePrice")double maximumPurchasePrice);
+	
+	//Encontramos los lotes con determinado stock:
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock s WHERE s.stockId = (:stockId)")
+	public abstract List<Lot> findByStock(@Param("stockId")int stockId);
 }

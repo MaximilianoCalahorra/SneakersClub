@@ -123,6 +123,7 @@ public class ProductService implements IProductService
 		{
 			Product product = findByProductId(productId);
 			product.setEnabled(false);
+			insertOrUpdate(product);
 			return true;
 		} 
 		catch(Exception e)

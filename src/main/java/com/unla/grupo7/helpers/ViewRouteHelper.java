@@ -3,9 +3,9 @@ package com.unla.grupo7.helpers;
 public class ViewRouteHelper {
 	/**** Views ****/
 	//HOME
-	public final static String INDEX = "home/index";
+	public final static String USER_INDEX = "home/userIndex";
+	public final static String ADMIN_INDEX = "home/adminIndex";
 	public final static String HELLO = "home/hello";
-	public final static String PRODUCTS = "home/products";
 
 	
 	//USER
@@ -15,6 +15,10 @@ public class ViewRouteHelper {
 	//STORES
 	public final static String STORES = "stores/stores";
 	
+	//PRODUCTS
+	public final static String PRODUCT_ADD = "products/productAdd";
+	public final static String PRODUCT_SAVE = "products/productSave";
+	public final static String PRODUCTS = "products/products";
 	
 	/**** Redirects ****/
 	public final static String ROUTE = "/index";

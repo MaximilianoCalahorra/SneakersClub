@@ -11,7 +11,7 @@ public interface IPurchaseService
 	///Encontrar:
 	
 	//Encontramos la compra con determinado id o lanzamos una excepción por compra inexistente:
-	public Optional<Purchase> findByPurchaseId(int purchaseId) throws Exception;
+	public Purchase findByPurchaseId(int purchaseId) throws Exception;
 		
 	//Encontramos las compras de un producto determinado:
 	public List<Purchase> findByProduct(int productId);

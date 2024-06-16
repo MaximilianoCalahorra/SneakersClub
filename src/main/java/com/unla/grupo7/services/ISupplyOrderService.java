@@ -10,7 +10,7 @@ public interface ISupplyOrderService
 	///Encontrar:
 	
 	//Encontramos el pedido de aprovisionamiento con determinado id o lanzamos una excepción por pedido de aprovisionamiento inexistente:
-	public Optional<SupplyOrder> findBySupplyOrderId(int supplyOrderId) throws Exception;
+	public SupplyOrder findBySupplyOrderId(int supplyOrderId) throws Exception;
 		
 	//Encontramos los pedidos de aprovisionamiento de un producto:
 	public List<SupplyOrder> findByProduct(int productId);

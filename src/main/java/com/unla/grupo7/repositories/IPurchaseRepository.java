@@ -19,7 +19,7 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	
 	//Encontramos la compra con determinado id:
 	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product WHERE p.purchaseId = (:purchaseId)")
-	public abstract Optional<Purchase> findByPurchaseId(@Param("purchaseId")int purchaseId);
+	public abstract Purchase findByPurchaseId(@Param("purchaseId")int purchaseId);
 	
 	//Encontramos las compras de un producto determinado:
 	@Query("SELECT p FROM Purchase p INNER JOIN FETCH p.product pr WHERE pr.productId = (:productId)")

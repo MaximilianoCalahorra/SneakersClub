@@ -18,7 +18,7 @@ public interface ISupplyOrderRepository extends JpaRepository<SupplyOrder, Seria
 	
 	//Encontramos el pedido de aprovisionamiento con determinado id:
 	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.supplyOrderId = (:supplyOrderId)")
-	public abstract Optional<SupplyOrder> findBySupplyOrderId(@Param("supplyOrderId")int supplyOrderId);
+	public abstract SupplyOrder findBySupplyOrderId(@Param("supplyOrderId")int supplyOrderId);
 	
 	//Encontramos los pedidos de aprovisionamiento de un producto:
 	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product p WHERE p.productId = (:productId)")

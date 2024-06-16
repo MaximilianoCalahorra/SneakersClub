@@ -28,7 +28,6 @@ public class Lot {
 	private int lotId;
 	
 	
-	
 	//cada lote tiene su stock 
 	//clave foranea 
 	@ManyToOne(fetch = FetchType.LAZY)

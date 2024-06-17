@@ -51,6 +51,19 @@ public class Purchase {
 		this.methodOfPay = methodOfPay;
 		
 	}
+
+	///CONSTRUCTOR COMPLETO
+	public Purchase(User customer, Product product, double purchasePrice, int amount, String methodOfPay) {
+		
+		this.customer = customer;
+		this.product = product;
+		this.purchasePrice = purchasePrice;
+		this.amount = amount;
+		this.methodOfPay = methodOfPay;
+	}
+	
+	
+	
 	
 	
 	

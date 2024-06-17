@@ -1,11 +1,11 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 20px;
 }
 
@@ -14,16 +14,42 @@ body{
 }
 
 
+.intro {
+	background-image: url('/assets/img/jordan4.webp');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 700px;
+	display: flex;
+	align-items: end;
+	justify-content: right;
+}
+
+.intro-title {
+	color: white;
+	padding: 20px;
+}
+
+.intro-title > a {
+	text-decoration: underline;
+	font-weight: bold;
+	color: white;
+}
+
+.intro-title > a:hover {
+	color: black;
+}
+
 /* -------------------------------------------- */
 
     /* carrusel */
 
-
+#carouselExampleAutoplaying {
+	padding: 40px;
+}
 
 .carousel-inner img{
-    height: 850px;
-   
-
+    height: 650px;
 }
 
 
@@ -66,6 +92,27 @@ body{
 	    }
 	}
 /* -------------------------------------- */
+
+.gallery-title {
+	background-color: black;
+	color: white;
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+}
+
+.gallery-button {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.gallery-button > button {
+	padding: 10px;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+}
 
 /* Estilos de seccion 2 (About Us) */
 .about-us-section {
@@ -218,5 +265,64 @@ body{
 .button-gallery-section > button:hover {
     transform: scale(1.1);
 	box-shadow: 2px 2px 21px black;
-	}
+}
+
+.tableTitle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tableTitle > h1 {
+	
+	padding-top: 20px;
+}
+
+.tableTitle > h1 > span {
+	
+	font-size: inherit;
+	font-weight: inherit;
+	color: red;
+}
+
+.tableTitle > button {
+	
+	padding: 10px;
+	border-radius: 5px;
+	background-color: green;
+	color: white;
+}
+
+.tableTitle > button:hover {
+	
+	font-weight: bold;
+}
+
+.tableTitle > button > a {
+	
+	text-decoration: none;
+	color: white;
+}
+
+.tableSection {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.tableTitle > h2 {
+	
+	text-decoration: underline;
+	padding: 20px;
+}
+
+td, th {
+    margin: 10px;
+    padding: 10px;
+    border: solid 1px;
+    text-align: center;
+}
+
+
 

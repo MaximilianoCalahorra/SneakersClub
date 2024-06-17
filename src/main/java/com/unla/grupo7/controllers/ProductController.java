@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.unla.grupo7.entities.Product;
+import com.unla.grupo7.entities.Stock;
 import com.unla.grupo7.helpers.ViewRouteHelper;
 import com.unla.grupo7.services.IProductService;
+import com.unla.grupo7.services.IStockService;
 
 @Controller
 @RequestMapping("/products")
@@ -18,6 +20,7 @@ public class ProductController {
 	
 	//DEFINIMOS INTERFACE DEL SERVICIO DE PRODUCTO
 	private IProductService productService;
+	private IStockService stockService;
 	
 	//CONSTRUCTOR DEL SERVICIO
 	public ProductController(IProductService productService) {
@@ -35,27 +38,21 @@ public class ProductController {
 	
 	//2- GUARDAMOS EL PRODUCTO EN LA BD
 	@PostMapping("/productSave") 
-	public ModelAndView create(@ModelAttribute("product") Product product) {
+	public ModelAndView create(@ModelAttribute("product") Product product, @ModelAttribute("stock") Stock stock) {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_SAVE);
 		try 
 		{
+			//INSERTAMOS NUESTRO PRODUCTO EN LA BD
 			productService.insert(product);
+			
+			//INICIALIZAMOS EL STOCK
+			
 		} 
 		catch(Exception e)
 		{
 			e.getMessage();
 		}
 		modelAndView.addObject("product", product);
-		return modelAndView;
-	}
-	
-	//3- CUANDO SE PETICIONA /products ENVIAMOS LA VISTA CON TODOS LOS PRODUCTOS ---> products/products.
-	//ENVIAMOS A LA VISTA LA LISTA DE PRODUCTOS DE LA BD.
-	@GetMapping("/products")
-	public ModelAndView products() {
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCTS);
-		List <Product> listaProducts = productService.getAll();
-		modelAndView.addObject("listaProducts", listaProducts);
 		return modelAndView;
 	}
 	

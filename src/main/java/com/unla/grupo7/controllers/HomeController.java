@@ -3,10 +3,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 import com.unla.grupo7.helpers.ViewRouteHelper;
 
 @Controller
@@ -37,12 +35,6 @@ public class HomeController {
 		return modelAndView;
 	}
 	
-	//2- CUANDO SE PETICIONA /stores ENVIAMOS LA VISTA CON LA UBICACION DE LAS SUCURSALES --> home/stores.
-	@GetMapping("/stores")
-	public ModelAndView stores() {
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.STORES);
-		return modelAndView;
-	}
 	
 	/*COSITAS EXTRAS
 	@GetMapping("/hello/{name}")

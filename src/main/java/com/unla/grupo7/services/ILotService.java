@@ -60,12 +60,12 @@ public interface ILotService
 	///Agregar:
 	
 	//Agregamos un lote:
-<<<<<<< HEAD
-	public Lot insert(Lot lot);
+
+	public Lot insertOrUpdate(Lot lot);
 	
 	//remove 
 	public boolean remove(int lotId);
-=======
-	public Lot insertOrUpdate(Lot lot);
->>>>>>> 832ae97d02f68b85da5cbbf6075de2260cdd7ff8
+
+	
+
 }

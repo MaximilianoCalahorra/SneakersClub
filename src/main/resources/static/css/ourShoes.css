@@ -137,6 +137,8 @@ body{
 }
 */
 
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -145,9 +147,13 @@ body{
 }
 
 body {
-  font-family: var(--body-font);
-  background-color: var(--body-color);
+  
+  background: url(../assets/img/backgroundCatalogo1.jpg);
   color: var(--text-color);
+
+ 
+  
+
 
   }
 
@@ -158,30 +164,43 @@ img {
 }
 
 /*=============== CARD ===============*/
-.container {
-  display: grid;
-  place-items: center;
 
-  padding-block: 5rem;
+.container {
+
+  place-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 
 }
 
 .card__container {
-  display: grid;
-  row-gap: 3.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 35px;
+
   
 }
 
 .card__article {
   position: relative;
   overflow: hidden;
-  background-color: grey;
+  background-color: white;
   border: 1px solid black;
-  height: 500px;
+  height: 400px;
+  width: 30%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+ 
 }
 
 .card__img {
-  width: 328px;
+  width: 100%;
+  height: auto;
   border-radius: 1.5rem;
 }
 
@@ -217,7 +236,12 @@ img {
   text-decoration: none;
   font-size: var(--small-font-size);
   font-weight: 500;
-  color: var(--first-color);
+  color: white;
+  background-color: #007BFF;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+ 
 }
 
 .card__button:hover {
@@ -225,6 +249,7 @@ img {
 }
 
 /* Naming animations in hover */
+
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -243,7 +268,9 @@ img {
   animation: remove-data 1s forwards;
 }
 
+
 /* Card animation */
+
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -281,44 +308,6 @@ img {
   }
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 340px) {
-  .container {
-    margin-inline: 1rem;
-  }
-
-  .card__data {
-    width: 250px;
-    padding: 1rem;
-  }
-}
-
-/* For medium devices */
-@media screen and (min-width: 768px) {
-  .card__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-  }
-}
-
-/* For large devices */
-@media screen and (min-width: 1120px) {
-  .container {
-    height: 100vh;
-  }
-
-  .card__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card__img {
-    width: 348px;
-  }
-  .card__data {
-    width: 316px;
-    padding-inline: 2.5rem;
-  }
-}
 
 
 

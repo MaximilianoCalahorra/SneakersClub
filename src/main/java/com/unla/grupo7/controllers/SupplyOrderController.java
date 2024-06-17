@@ -43,13 +43,20 @@ public class SupplyOrderController {
 	///2- GUARDAR EN LA BD
 	@PostMapping("/supplyOrderSave") 
 	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder, 
-			@RequestParam("code") String code) 
+			@RequestParam("code") String code)  ///recibe el codigo y lo busca el producto
 	{
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_SAVE);
 		try {
+			System.out.println("CODE --> " + code);
+			
 			Product p = productService.findByCode(code);
-			SupplyOrder s = new SupplyOrder(null, p, supplyOrder.getSupplier(), supplyOrder.getAmount(), 
+			
+			System.out.println("ID PRODUCTO -> " + p.getProductId());
+			SupplyOrder s = new SupplyOrder(p, supplyOrder.getSupplier(), supplyOrder.getAmount(), 
 					supplyOrder.getState());
+			
+			System.out.println("GET AMOUNT -> "+supplyOrder.getAmount());
+			
 			supplyOrderService.insert(s);
 		} 
 		catch(Exception e){
@@ -70,9 +77,4 @@ public class SupplyOrderController {
 		return modelAndView;
 	}
 	
-	
-	
-	
-	
-
 }

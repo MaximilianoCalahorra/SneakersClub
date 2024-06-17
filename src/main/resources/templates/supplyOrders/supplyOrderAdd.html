@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Grupo7</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/iconoPagina.jpg" />
+    </head>
+	<body>
+		<main>
+			<section>
+				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrder/supplyOrderSave}" method="post">
+					
+					<p>Supplier: <input type="text" th:field="*{supplier}"/></p>
+					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1"/></p>
+					<p>State: <input type="text" th:field="*{state}"/></p>
+					<p>Code: <input type="text" name ="code"/></p>
+					
+					<input type="submit" value="Buy Product"/>
+				</form>	
+			</section>
+		</main>
+	</body>	
+</html>

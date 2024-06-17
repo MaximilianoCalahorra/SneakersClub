@@ -11,41 +11,21 @@
 		<link href="/css/ourShoes.css" rel="stylesheet" />
 		<link href="/css/navBar.css" rel="stylesheet" />
 		<link href="/css/footer.css" rel="stylesheet" />
+	
     </head>
     <body>
 		<div th:include="navBar/navBarUser.html::div-header"></div>
-		
-		<!--<section class="container-cards">
-			<div th:each="product : ${listaProducts}" class="cards">
-				<div class="imgbox">
-					<img th:src="@{'/assets/img/' + ${product.productId} + '.png'}" alt="Imagen del Producto" width="100" height="100"/>
-				</div>
-				
-				<div class="details">
-					<h2 th:text="${product.brand}"> <span th:text="${product.brand}"></span></h2>
-					<div class="price">
-						<p th:text="${product.salePrice}"></p>
-					</div>
-				</div>
-				
-				<label>+Info</label>
-				<ul>
-					<li th:text="${product.description}"></li>
-					<li th:text="${product.code}"></li>
-				</ul>
-				
-			</div>
-		</section>
-		-->
+
 		<div class="container">
 		         <div class="card__container">
 		            <article th:each="product : ${listaProducts}" class="card__article">
+						<h1 th:text="${product.name}" class="card__title"></h1>
 		               <img th:src="@{'/assets/img/' + ${product.productId} + '.jpg'}" alt="image" class="card__img">
 
 		               <div class="card__data">
 		                  <span th:text="${product.brand}" class="card__description"></span>
-		                  <h2 th:text="${product.brand}" class="card__title"></h2>
-		                  <a href="#" class="card__button">Read More</a>
+		                  <h2 th:text="${product.name}" class="card__title"></h2>
+		                  <a th:href="@{moreDetails/}+${product.productId}" class="card__button">Read More</a>
 		               </div>
 		            </article>
 		         </div>
@@ -55,5 +35,7 @@
 		<div th:include="footer/footer.html::footer"></div>
 			
 		    <!-- ----------------------------------------------------------------------- -->
+			
+			
     </body>
 </html>

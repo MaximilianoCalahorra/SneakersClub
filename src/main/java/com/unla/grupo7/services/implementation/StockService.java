@@ -2,6 +2,8 @@ package com.unla.grupo7.services.implementation;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.unla.grupo7.entities.Lot;
 import com.unla.grupo7.entities.Stock;
 import com.unla.grupo7.repositories.IStockRepository;
@@ -9,7 +11,7 @@ import com.unla.grupo7.services.IStockService;
 import com.unla.grupo7.services.ILotService;
 
 
-
+@Service("stockService")
 public class StockService implements IStockService{
 	
 	private IStockRepository stockRepository;

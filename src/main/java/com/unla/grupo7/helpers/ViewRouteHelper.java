@@ -25,7 +25,7 @@ public class ViewRouteHelper {
 	
 	///SUPPLYORDER
 	public final static String SUPPLY_ORDER_ADD = "supplyOrders/supplyOrderAdd";
-	public final static String SUPPLY_ORDER_SAVE = "supplyOrders/supplyOrderAdd";
+	public final static String SUPPLY_ORDER_SAVE = "supplyOrders/supplyOrderSave";
 	public final static String SUPPLY_ORDERS = "supplyOrders/supplyOrders";
 	
 	//PURCHASES

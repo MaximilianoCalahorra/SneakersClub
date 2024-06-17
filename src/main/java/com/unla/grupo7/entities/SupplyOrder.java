@@ -23,12 +23,6 @@ public class SupplyOrder {
 	@Id //id se genera automaticamente
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int supplyOrderId;
-	
-
-	//Many to one con user
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="user_id", nullable=false)
-	private User administrator;
 		
 	// many to one con product
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -50,9 +44,8 @@ public class SupplyOrder {
 	}
 
 	///CONSTRUCTOR COMPLETO
-	public SupplyOrder(User administrator, Product product, String supplier, int amount, String state) {
-		super();
-		this.administrator = administrator;
+	public SupplyOrder(Product product, String supplier, int amount, String state) {
+		
 		this.product = product;
 		this.supplier = supplier;
 		this.amount = amount;

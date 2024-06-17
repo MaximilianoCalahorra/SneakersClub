@@ -13,6 +13,20 @@
 		<link href="/css/navBar.css" rel="stylesheet" />
 		<link href="/css/footer.css" rel="stylesheet" />
     </head>
+	
+	<script>
+		type="text/javascript"
+		function ConfirmDelete(){
+			var respuesta = confirm("Desea eliminar el producto?");
+			
+			if (respuesta ==true){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	</script>
+	
     <body >
 		
 		<div th:include="navBar/navBarAdmin.html::div-header"></div>
@@ -44,7 +58,7 @@
 		               <td th:text="${product.salePrice}"></td>
 					   <td>
 					   		<a th:href="@{edit/}+${product.productId}" class="btn btn-warning"> Edit </a>
-							<a th:href="@{remove/}+${product.productId}" class="btn btn-danger"> Remove </a>
+							<a th:href="@{remove/}+${product.productId}" class="btn btn-danger" onclick = "return ConfirmDelete()"> Remove </a>
 
 					   </td>
 		           </tr>

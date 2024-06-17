@@ -37,7 +37,14 @@ public class ProductController {
 	@PostMapping("/productSave") 
 	public ModelAndView create(@ModelAttribute("product") Product product) {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_SAVE);
-		productService.insertOrUpdate(product);
+		try 
+		{
+			productService.insert(product);
+		} 
+		catch(Exception e)
+		{
+			e.getMessage();
+		}
 		modelAndView.addObject("product", product);
 		return modelAndView;
 	}

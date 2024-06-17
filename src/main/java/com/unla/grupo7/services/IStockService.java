@@ -2,7 +2,6 @@ package com.unla.grupo7.services;
 
 import java.util.List;
 
-import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.Stock;
 
 public interface IStockService 
@@ -35,11 +34,16 @@ public interface IStockService
 	//Obtenemos los stocks:
 	public List<Stock> getAll();
 	
+	//Obtenemos la cantidad actual de stock de un producto:
+	public int actualAmount(int productId);
+	
 	///Agregar o modificar:
 	
 	//Agregamos o modificamos un stock:
 	public Stock insertOrUpdate(Stock stock);
 	
+	///Verificar:
 	
-	
+	//Verificamos que el stock del producto sea suficiente:
+	public void availableStock(int productId, int amount) throws Exception;
 }

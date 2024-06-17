@@ -103,6 +103,12 @@ public class LotService implements ILotService{
 		
 		return lotRepository.findByPurchasePriceRange(minimumPurchasePrice, maximumPurchasePrice);
 	}
+	
+	@Override
+	public List<Lot> findByStock(int stockId)
+	{
+		return lotRepository.findByStock(stockId);
+	}
 
 	@Override
 	public List<Lot> getAll() {
@@ -111,11 +117,28 @@ public class LotService implements ILotService{
 	}
 
 	@Override
-	public Lot insert(Lot lot) {
+	public Lot insertOrUpdate(Lot lot) {
 		
 		return lotRepository.save(lot);
 		
 	}
+
+
+	@Override
+	public boolean remove(int lotId) {
+		
+		try {
+			
+			lotRepository.deleteById(lotId);
+			return true;
+			
+		}catch(Exception e){
+			
+			return false;
+		}
+	}
+
+
 
 	
 	

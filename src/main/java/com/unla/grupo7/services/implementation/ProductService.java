@@ -106,9 +106,22 @@ public class ProductService implements IProductService
 	
 	///Agregar o modificar:
 	
-	//Agregamos o modificamos un producto:
+	//Agregamos un producto:
 	@Override
-	public Product insertOrUpdate(Product product) 
+	public Product insert(Product product) throws Exception
+	{
+		if(productRepository.findByCode(product.getCode()) != null) 
+		{
+			throw new Exception("ERROR the product is existent");
+		}
+		return productRepository.save(product);
+	}
+	
+	///Modificar:
+	
+	//Modificamos un producto:
+	@Override
+	public Product update(Product product) 
 	{
 		return productRepository.save(product);
 	}
@@ -123,7 +136,7 @@ public class ProductService implements IProductService
 		{
 			Product product = findByProductId(productId);
 			product.setEnabled(false);
-			insertOrUpdate(product);
+			update(product);
 			return true;
 		} 
 		catch(Exception e)

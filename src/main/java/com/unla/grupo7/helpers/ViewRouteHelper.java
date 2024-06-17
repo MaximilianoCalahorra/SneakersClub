@@ -23,6 +23,9 @@ public class ViewRouteHelper {
 	public final static String PRODUCT_EDIT = "products/productEdit";
 	public final static String OURSHOES = "products/ourShoes";
 	
+	//PURCHASES
+	public final static String PURCHASE_FORM = "purchases/purchaseForm";
+	
 	/**** Redirects ****/
 	public final static String ROUTE = "/index";
 

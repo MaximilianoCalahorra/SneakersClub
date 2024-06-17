@@ -1,8 +1,6 @@
 package com.unla.grupo7.controllers;
-import java.util.List;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
-
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.helpers.ViewRouteHelper;
 import com.unla.grupo7.services.IProductService;
@@ -55,11 +51,48 @@ public class ProductController {
 	
 	//3- CUANDO SE PETICIONA /products ENVIAMOS LA VISTA CON TODOS LOS PRODUCTOS ---> products/products.
 	//ENVIAMOS A LA VISTA LA LISTA DE PRODUCTOS DE LA BD.
-	@GetMapping("/")
+	@GetMapping("/products")
 	public ModelAndView products() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCTS);
-		List <Product> listaProductos = productService.getAll();
-		modelAndView.addObject("listaProducts", listaProductos);
+		List <Product> listaProducts = productService.getAll();
+		modelAndView.addObject("listaProducts", listaProducts);
 		return modelAndView;
 	}
+	
+	//4- EDITAMOS EL PRODUCTO
+	@GetMapping("/edit/{productId}")
+	public ModelAndView edit(@PathVariable int productId) throws Exception {
+		
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_EDIT);
+		
+		Product product = productService.findByProductId(productId);
+		modelAndView.addObject("product", product);
+		
+		return modelAndView;
+	}
+	
+	
+	//5- REMOVER EL PRODUCTO
+	@GetMapping("/remove/{productId}")
+	public ModelAndView remove(@PathVariable int productId) throws Exception {
+		
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_REMOVE);
+		Product product = productService.findByProductId(productId);
+		productService.remove(productId);
+		modelAndView.addObject("product", product);
+		return modelAndView;
+		
+	}
+	
+
+	//1- Cuando se peticiona /ourShoes enviamos la vista --> products/ourShoes.
+	@GetMapping("/ourShoes")
+	public ModelAndView ourShoes() {
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.OURSHOES);
+		List <Product> listaProducts = productService.getAll();
+		modelAndView.addObject("listaProducts", listaProducts);
+		return modelAndView;
+	}
+	
+
 }

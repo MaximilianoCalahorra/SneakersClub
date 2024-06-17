@@ -37,7 +37,6 @@ public class SupplyOrderController {
 		
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_ADD);
 		modelAndView.addObject("supplyOrder", new SupplyOrder ());
-		
 		return modelAndView;
 	}
 	

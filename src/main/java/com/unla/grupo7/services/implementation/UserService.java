@@ -24,6 +24,11 @@ public class UserService implements UserDetailsService {
 	public UserService(IUserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
+	
+	public com.unla.grupo7.entities.User findByUsername(String username) 
+	{
+		return userRepository.findByUsername(username);
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

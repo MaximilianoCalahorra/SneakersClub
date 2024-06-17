@@ -44,9 +44,12 @@ body{
 
     /* carrusel */
 
+#carouselExampleAutoplaying {
+	padding: 40px;
+}
 
 .carousel-inner img{
-    height: 750px;
+    height: 650px;
 }
 
 
@@ -262,5 +265,64 @@ body{
 .button-gallery-section > button:hover {
     transform: scale(1.1);
 	box-shadow: 2px 2px 21px black;
-	}
+}
+
+.tableTitle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tableTitle > h1 {
+	
+	padding-top: 20px;
+}
+
+.tableTitle > h1 > span {
+	
+	font-size: inherit;
+	font-weight: inherit;
+	color: red;
+}
+
+.tableTitle > button {
+	
+	padding: 10px;
+	border-radius: 5px;
+	background-color: green;
+	color: white;
+}
+
+.tableTitle > button:hover {
+	
+	font-weight: bold;
+}
+
+.tableTitle > button > a {
+	
+	text-decoration: none;
+	color: white;
+}
+
+.tableSection {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.tableTitle > h2 {
+	
+	text-decoration: underline;
+	padding: 20px;
+}
+
+td, th {
+    margin: 10px;
+    padding: 10px;
+    border: solid 1px;
+    text-align: center;
+}
+
+
 

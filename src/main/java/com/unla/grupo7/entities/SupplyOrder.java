@@ -36,9 +36,6 @@ public class SupplyOrder {
 	private Product product;
 	
 	
-	
-	
-	
 	private String supplier;
 	
 	private int amount;
@@ -51,6 +48,18 @@ public class SupplyOrder {
 		this.amount = amount;
 		this.state = state;
 	}
+
+	///CONSTRUCTOR COMPLETO
+	public SupplyOrder(User administrator, Product product, String supplier, int amount, String state) {
+		super();
+		this.administrator = administrator;
+		this.product = product;
+		this.supplier = supplier;
+		this.amount = amount;
+		this.state = state;
+	}
+	
+	
 	
 	
 }

@@ -36,6 +36,17 @@ public class Stock {
 		this.minimumAmount = minimumAmount;
 		this.actualAmount = actualAmount;
 	}
+
+	///CONSTRUCTOR STOCK
+	public Stock(Product product, int desirableAmount, int minimumAmount, int actualAmount) {
+		super();
+		this.product = product;
+		this.desirableAmount = desirableAmount;
+		this.minimumAmount = minimumAmount;
+		this.actualAmount = actualAmount;
+	}
+	
+	
 	
 	
 	

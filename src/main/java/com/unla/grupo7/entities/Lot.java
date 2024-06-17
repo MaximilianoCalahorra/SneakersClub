@@ -54,6 +54,17 @@ public class Lot {
 		this.existingAmount = existingAmount;
 		this.purchasePrice = purchasePrice;
 	}
+
+	///CONSTRUCTOR COMPLETO
+	public Lot(Stock stock, SupplyOrder supplyOrder, int initialAmount, int existingAmount, double purchasePrice) {
+	
+		this.stock = stock;
+		this.supplyOrder = supplyOrder;
+		this.initialAmount = initialAmount;
+		this.existingAmount = existingAmount;
+		this.purchasePrice = purchasePrice;
+	}
+	
 	
 	
 	

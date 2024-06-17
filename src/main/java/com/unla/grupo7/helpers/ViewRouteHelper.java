@@ -28,6 +28,9 @@ public class ViewRouteHelper {
 	public final static String SUPPLY_ORDER_SAVE = "supplyOrders/supplyOrderAdd";
 	public final static String SUPPLY_ORDERS = "supplyOrders/supplyOrders";
 	
+	//PURCHASES
+	public final static String PURCHASE_FORM = "purchases/purchaseForm";
+	
 	/**** Redirects ****/
 	public final static String ROUTE = "/index";
 

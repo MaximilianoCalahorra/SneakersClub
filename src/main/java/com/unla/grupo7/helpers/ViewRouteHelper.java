@@ -22,6 +22,7 @@ public class ViewRouteHelper {
 	public final static String PRODUCT_REMOVE = "products/productRemove";
 	public final static String PRODUCT_EDIT = "products/productEdit";
 	public final static String OURSHOES = "products/ourShoes";
+
 	
 	/**** Redirects ****/
 	public final static String ROUTE = "/index";

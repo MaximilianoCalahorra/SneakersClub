@@ -31,7 +31,7 @@ public class SupplyOrderController {
 	@GetMapping("/supplyOrderAdd")
 	public ModelAndView supplyOrderAdd() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_ADD);
-		modelAndView.addObject("supplyOrder", new Product ());
+		modelAndView.addObject("supplyOrder", new SupplyOrder ());
 		return modelAndView;
 	}
 	

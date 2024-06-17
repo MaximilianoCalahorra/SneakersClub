@@ -3,10 +3,13 @@ package com.unla.grupo7.services.implementation;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.unla.grupo7.entities.Lot;
 import com.unla.grupo7.repositories.ILotRepository;
 import com.unla.grupo7.services.ILotService;
 
+@Service("lotService")
 public class LotService implements ILotService{
 
 	private ILotRepository lotRepository;

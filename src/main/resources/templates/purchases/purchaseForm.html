@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Grupo7</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/iconoPagina.jpg" />
+    </head>
+	<body>
+		<main>
+			<section>
+				<h1>Product Information</h1>
+				<p>Brand: <span th:text="${product.brand}"></span></p>
+				<p>Code: <span th:text="${product.code}"></span></p>
+				<p>Cost: <span th:text="${product.cost}"></span></p>
+				<p>Description: <span th:text="${product.description}"></span></p>
+				<p>Name: <span th:text="${product.name}"></span></p>
+				<p>Sale Price: <span th:text="${product.salePrice}"></span></p>
+				<p>Enabled: <span th:text="${product.enabled}"></span></p>
+			</section>
+			<section>
+				<form action="#" th:action="@{/purchases/purchaseSave}" method="post">
+					<input type="hidden" th:field="*{productId}"/>
+					<input type="hidden" th:field="*{username}"/>					
+					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1"/></p>
+					<p>
+						Method of pay:
+						<select th:field="*{methodOfPay}" required>
+					    <option value="Debit">Debit</option>
+					    <option value="Credit">Credit</option>
+						</select>
+					</p>
+					<input type="submit" value="Buy Product"/>
+				</form>	
+			</section>
+		</main>
+	</body>	
+</html>

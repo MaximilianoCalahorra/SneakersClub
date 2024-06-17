@@ -13,26 +13,57 @@
 		<link href="/css/navBar.css" rel="stylesheet" />
 		<link href="/css/footer.css" rel="stylesheet" />
     </head>
+	
+	<script>
+		type="text/javascript"
+		function ConfirmDelete(){
+			var respuesta = confirm("Desea eliminar el producto?");
+			
+			if (respuesta ==true){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	</script>
+	
     <body >
 		
-		<div th:include="navBar/navBarUser.html::div-header"></div>
+		<div th:include="navBar/navBarAdmin.html::div-header"></div>
 		
 		
-		<div th:each="product : ${listaProducts}">
-			<h2 th:text="${product.name}"> Nombre del producto </h2> 
-			<p th:text="${product.description}"> Descripcion del Producto </p>
-			<p th:text="${product.salePrice}"> Precio del Producto </p>
-		</div>
-		
-		<div class="container">
-			<div class="container-divs">	
-				<div class="view">	
-					<img src="assets/img/1.png" alt="">
-				</div>
-				<div class="info">	
-					<p> </p>
-				</div>		
-			</div>
+		<h1>Lista de Productos</h1>
+		   <table border="1">
+		       <thead>
+		           <tr>
+		               <th>ID</th>
+		               <th>Marca</th>
+		               <th>Código</th>
+		               <th>Costo</th>
+		               <th>Descripción</th>
+		               <th>Habilitado</th>
+		               <th>Nombre</th>
+		               <th>Precio de Venta</th>
+		           </tr>
+		       </thead>
+		       <tbody>
+		           <tr th:each="product : ${listaProducts}">
+		               <td th:text="${product.productId}"></td>
+		               <td th:text="${product.brand}"></td>
+		               <td th:text="${product.code}"></td>
+		               <td th:text="${product.cost}"></td>
+		               <td th:text="${product.description}"></td>
+		               <td th:text="${product.enabled ? 'Sí' : 'No'}"></td>
+		               <td th:text="${product.name}"></td>
+		               <td th:text="${product.salePrice}"></td>
+					   <td>
+					   		<a th:href="@{edit/}+${product.productId}" class="btn btn-warning"> Edit </a>
+							<a th:href="@{remove/}+${product.productId}" class="btn btn-danger" onclick = "return ConfirmDelete()"> Remove </a>
+
+					   </td>
+		           </tr>
+		       </tbody>
+		   </table>
 			
 	
 	<div th:include="footer/footer.html::footer"></div>	

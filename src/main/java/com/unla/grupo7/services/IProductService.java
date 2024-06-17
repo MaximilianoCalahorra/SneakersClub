@@ -40,10 +40,15 @@ public interface IProductService
 	//Obtenemos los productos:
 	public List<Product> getAll();
 	
-	///Agregar o modificar:
+	///Agregar:
 	
-	//Agregamos o modificamos un producto:
-	public Product insertOrUpdate(Product product);
+	//Agregamos un producto:
+	public Product insert(Product product) throws Exception;
+	
+	///Modificar:
+	
+	//Modificamos un producto:
+	public Product update(Product product);
 	
 	///Eliminar:
 	

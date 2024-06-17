@@ -1,10 +1,9 @@
 .header{
-    background-color: whitesmoke;
+    background-color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    padding: 5px 10%;
+    border-bottom: black solid 3px;
 }
 
 .header .logo{
@@ -23,43 +22,40 @@
 }
 
 .header .nav-links{
+	display: flex;
+	align-items: center;
     list-style: none;
+    justify-content: center;
+}
+
+
+.header .nav-links .link:hover{
+    transform: scale(1.3);
 }
 
 .header .nav-links .link{
-    display: inline-block;
-	margin-top: 15px;
-    padding: 0 20px;    
-
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 20px;  
+    color: white;    
 }
 
 .header .nav-links .link:hover{
-    transform: scale(1.1);
-}
-
-.header .nav-links .link{
-    font-size: 700;
     color: black;
-    text-decoration: none;    
 }
 
-.header .nav-links .link:hover{
-    color: #ffbc0e;
-}
-
-.header .btn button{
-    font-weight: 700;
-    color: black;
-    padding: 9px 25px;
-    background: #eceff1;
-    border: none;
-    border-radius: 50px;
+.header .btn {
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    height: 50px;
+    width: 70px;
 }
 
-.header .btn button:hover{
-    background-color: rgb(34, 40, 49);
-    color: #ffbc0e;
+.header .btn:hover{
     transform: scale(1.1);
 }
+
+
+
+
+

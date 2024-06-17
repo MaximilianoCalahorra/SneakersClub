@@ -54,8 +54,8 @@ public class ProductController {
 	@GetMapping("/products")
 	public ModelAndView products() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCTS);
-		List <Product> listaProducts = productService.getAll();
-		modelAndView.addObject("listaProducts", listaProducts);
+		List <Product> listaProductos = productService.findByEnabled(true);
+		modelAndView.addObject("listaProducts", listaProductos);
 		return modelAndView;
 	}
 	

@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.SupplyOrder;
 import com.unla.grupo7.helpers.ViewRouteHelper;
 import com.unla.grupo7.repositories.ISupplyOrderRepository;
+import com.unla.grupo7.services.IProductService;
 import com.unla.grupo7.services.ISupplyOrderService;
 
 @Controller
@@ -21,30 +23,61 @@ import com.unla.grupo7.services.ISupplyOrderService;
 public class SupplyOrderController {
 	
 	private ISupplyOrderService supplyOrderService;
+	private IProductService productService;
 
-	public SupplyOrderController(ISupplyOrderService supplyOrderService) {
-
+	public SupplyOrderController(ISupplyOrderService supplyOrderService, IProductService productService) {
+		super();
 		this.supplyOrderService = supplyOrderService;
+		this.productService = productService;
 	}
-
+	
+	public Product retornarProducto(Product p) {
+		return p;
+		
+	}
+	
+	
 	//1- AGREGAR PRODUCTOS
-	@GetMapping("/supplyOrderAdd")
-	public ModelAndView supplyOrderAdd() {
+	@GetMapping("/supplyOrderAdd/{productId}")
+	public ModelAndView supplyOrderAdd(@PathVariable int productId) {
+		
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_ADD);
-		modelAndView.addObject("supplyOrder", new SupplyOrder ());
+		SupplyOrder supplyOrder = new SupplyOrder();
+		
+		
+		try {
+			
+			Product p = productService.findByProductId(productId);
+			
+			supplyOrder.setProduct(p);
+			
+			modelAndView.addObject("supplyOrder", supplyOrder);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+			
 		return modelAndView;
 	}
 	
 	///2- GUARDAR EN LA BD
 	@PostMapping("/supplyOrderSave") 
-	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder) {
+	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
+	{
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_SAVE);
-		try {
-			supplyOrderService.insert(supplyOrder);
-		} 
-		catch(Exception e){
+		
+		System.out.println("Product ID" + supplyOrder.getProduct().getName());
+		
+		try {	
 			
-			e.getMessage();
+			supplyOrderService.insert(supplyOrder);
+			
+		} catch(Exception e){
+			
+			System.out.println(e.getMessage());
+			
 		}
 		
 		modelAndView.addObject("supplyOrder", supplyOrder);
@@ -60,9 +93,4 @@ public class SupplyOrderController {
 		return modelAndView;
 	}
 	
-	
-	
-	
-	
-
 }

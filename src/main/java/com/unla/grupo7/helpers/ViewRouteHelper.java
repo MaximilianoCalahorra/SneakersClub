@@ -22,14 +22,16 @@ public class ViewRouteHelper {
 	public final static String PRODUCT_REMOVE = "products/productRemove";
 	public final static String PRODUCT_EDIT = "products/productEdit";
 	public final static String OURSHOES = "products/ourShoes";
+
 	
 	///SUPPLYORDER
 	public final static String SUPPLY_ORDER_ADD = "supplyOrders/supplyOrderAdd";
-	public final static String SUPPLY_ORDER_SAVE = "supplyOrders/supplyOrderAdd";
+	public final static String SUPPLY_ORDER_SAVE = "supplyOrders/supplyOrderSave";
 	public final static String SUPPLY_ORDERS = "supplyOrders/supplyOrders";
 	
 	//PURCHASES
 	public final static String PURCHASE_FORM = "purchases/purchaseForm";
+	public final static String POSTPURCHASE = "purchases/postPurchase";
 	
 	/**** Redirects ****/
 	public final static String ROUTE = "/index";

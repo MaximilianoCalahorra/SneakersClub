@@ -3,7 +3,11 @@ package com.unla.grupo7.services;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.unla.grupo7.entities.Lot;
+import com.unla.grupo7.entities.Stock;
+
 
 public interface ILotService 
 {

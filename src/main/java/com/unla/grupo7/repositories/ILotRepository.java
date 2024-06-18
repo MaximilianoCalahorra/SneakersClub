@@ -74,6 +74,7 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 													   @Param("maximumPurchasePrice")double maximumPurchasePrice);
 	
 	//Encontramos los lotes con determinado stock:
-	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock s WHERE s.stockId = (:stockId)")
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock s INNER JOIN FETCH l.supplyOrder sp INNER JOIN FETCH sp.product WHERE s.stockId = (:stockId)")
 	public abstract List<Lot> findByStock(@Param("stockId")int stockId);
+	
 }

@@ -159,4 +159,9 @@ public class ProductService implements IProductService
 			return false;
 		}
 	}
+
+	@Override
+	public List<Product> findByEnabledInOrder(boolean enabled) {
+		return productRepository.findByEnabledInOrder(enabled);
+	}
 }

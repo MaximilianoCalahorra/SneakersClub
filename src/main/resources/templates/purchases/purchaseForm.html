@@ -16,7 +16,7 @@
 	<body>
 		<div th:include="navBar/navBarUser.html::div-header"></div>
 		<main>
-			<section>
+			<section class="sectionPurchase">
 				
 				<div class="img-box">
 					<img th:src="@{'/assets/img/' + ${product.productId} + '.jpg'}" alt="image" class="card__img">
@@ -69,12 +69,14 @@
 										<div class="card card-body" style="width: 250px;">
 											<form th:action="@{/purchases/purchaseSave}" method="post">
 								    			<input type="hidden" th:field="*{product.productId}" />
-							 		   			<input type="number" name="amount" placeholder="Amount"/>
-												<select name="methodOfPay">
+							 		   			<input type="number" name="amount" placeholder="Amount" th:attr="max=${stock.actualAmount}, disabled=${stock.actualAmount == 0} ? true : false"  
+												min="1" required/>
+												<select name="methodOfPay" required th:disabled="${stock.actualAmount == 0}">
+													<option value=""></option>
 												    <option value="Debit">Debit</option>
 												    <option value="Credit">Credit</option>
 												</select>
-							   	 				<button class="submit" type="submit">Submit</button>
+							   	 				<button th:disabled="${stock.actualAmount == 0}" class="submit" type="submit">Submit</button>
 											</form>
 										</div>
 									</div>
@@ -96,60 +98,6 @@
 						</div>
 						
 					</div>
-
-			
-
-					<section class="uno">
-						
-						<div class="img-box">
-							<img th:src="@{'/assets/img/' + ${product.productId} + '.jpg'}" alt="image" class="card__img">
-						</div>
-						
-						<div class="dos">
-							<div class="tres">
-								<h2 th:text="${product.brand}"></h2>
-							
-							</div>
-							
-							<div class="tres">
-								<h2 th:text="${product.name}"></h2>
-											
-							</div>
-							
-							<div class="tres">
-								<h2 th:text="${product.name}"></h2>
-																		
-							</div>
-														
-							<div class="tres">
-								<h2 th:text="${product.name}"></h2>
-																		
-							</div>	
-							
-							<div class="tres">
-								<h2 th:text="${product.name}"></h2>
-																		
-							</div>				
-							
-							<!--<div>
-								<h2 th:text="${purchase.amount}"></h2>
-											
-							</div>
-							
-							<div>
-								<h2 th:text="${purchase.purchasePrice}"></h2>
-											
-							</div>
-							
-							<div>
-								<h2 th:text="${purchase.methodOfPay}"></h2>
-										
-							</div>-->
-											
-						</div>
-						
-					</section>
-			 
 			
 		</main>
 		

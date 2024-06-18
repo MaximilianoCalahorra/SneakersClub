@@ -10,20 +10,17 @@
 	<body>
 	   
 		<main>
-		       <!-- Formulario de Inicio de Sesion -->
-		       <form th:action="@{/loginprocess}" method="post">
-		           <h4> Login </h4> 
-		           <input class="controls" type="text" name="username" id="username" placeholder="Username">
-		           <input class="controls" type="password" name="password" id="password" placeholder="Password">
-		           <input class="botons" type="submit" value="Submit">
-		       </form>
-				<!-------------------------------------------------------------->
-			    
-				<!--Mensaje de Error-->  
-			   <div th:if="${error != null}" class="alert alert-danger">
-			     	Invalid username or password.
+		   
+			   <div class="login">
+			   	<h1>Login</h1>
+			       <form th:action="@{/loginprocess}" method="post">
+			       	<input type="text" name="username" id="username" placeholder="Username" required="required" />
+			           <input type="password" name="password" id="password" placeholder="Password" required="required" />
+			           <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+			       </form>
 			   </div>
-			   <!-------------------------------------------------------------->
-		   </main>
+	
+   
+		</main>
 	</body>
 </html>

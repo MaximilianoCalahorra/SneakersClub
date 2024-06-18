@@ -25,11 +25,6 @@ public class Purchase {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int purchaseId;
 	
-	//Many to one con user
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="user_id", nullable=false)
-	private User customer;
-	
 	// many to one con product
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="product_id", nullable=false)
@@ -53,9 +48,8 @@ public class Purchase {
 	}
 
 	///CONSTRUCTOR COMPLETO
-	public Purchase(User customer, Product product, double purchasePrice, int amount, String methodOfPay) {
+	public Purchase(Product product, double purchasePrice, int amount, String methodOfPay) {
 		
-		this.customer = customer;
 		this.product = product;
 		this.purchasePrice = purchasePrice;
 		this.amount = amount;

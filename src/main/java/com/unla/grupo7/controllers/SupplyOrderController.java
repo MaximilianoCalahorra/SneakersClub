@@ -8,13 +8,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.SupplyOrder;
 import com.unla.grupo7.helpers.ViewRouteHelper;
-import com.unla.grupo7.repositories.ISupplyOrderRepository;
 import com.unla.grupo7.services.IProductService;
 import com.unla.grupo7.services.ISupplyOrderService;
 
@@ -29,11 +27,6 @@ public class SupplyOrderController {
 		super();
 		this.supplyOrderService = supplyOrderService;
 		this.productService = productService;
-	}
-	
-	public Product retornarProducto(Product p) {
-		return p;
-		
 	}
 	
 	//1- AGREGAR PRODUCTOS
@@ -87,9 +80,26 @@ public class SupplyOrderController {
 	@GetMapping("/supplyOrders")
 	public ModelAndView supplyOrders() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDERS);
-		List <SupplyOrder> listaSuppyOrders = supplyOrderService.getAll();
-		modelAndView.addObject("listaSupplyOrders", listaSuppyOrders);
+		List <SupplyOrder> listaSuppyOrdersInProcess = supplyOrderService.findByState("In process");
+		List <SupplyOrder> listaSuppyOrdersDelivered = supplyOrderService.findByState("Delivered");
+		modelAndView.addObject("listaSupplyOrdersInProcess", listaSuppyOrdersInProcess);
+		modelAndView.addObject("listaSupplyOrdersDelivered", listaSuppyOrdersDelivered);
 		return modelAndView;
 	}
 	
+	@GetMapping("/registerDelivered/{supplyOrderId}")
+	public String registerDelivered(@PathVariable int supplyOrderId) 
+	{
+		try
+		{
+			SupplyOrder supplyOrder = supplyOrderService.findBySupplyOrderId(supplyOrderId); //Obtenemos el SupplyOrder a modificar.
+			supplyOrder.setState("Delivered"); //Seteamos el estado de la SupplyOrder a entregado como solicitó el administrador.
+			supplyOrderService.insert(supplyOrder); //Modificamos la SupplyOrder en la base de datos.
+		} 
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		} 
+		return "redirect:/supplyOrder/supplyOrders"; //Redireccionamos a la lista de SupplyOrder.
+	}
 }

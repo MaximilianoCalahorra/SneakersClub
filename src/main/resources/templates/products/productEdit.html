@@ -14,15 +14,17 @@
 		<div th:include="navBar/navBarAdmin.html::div-header"></div>
 		
 		<h1>Edit Product</h1>
-		<form th:object="${product}" action="#" th:action="@{/products/productSave}" method="post">
-			<input type="hidden" th:field="*{productId}"/>
-			<p>Code: <input type="text" th:field="*{code}"/></p>
-			<p>Brand: <input type="text" th:field="*{brand}"/></p>
-			<p>Name: <input type="text" th:field="*{name}"/></p>
-			<p>Description: <input type="text" th:field="*{description}"/></p>
-			<p>Cost: <input type="number" th:field="*{cost}"/></p>
-			<p>Sale Price: <input type="number" th:field="*{salePrice}"/></p>
-			<p>Enabled: <input type="radio" th:field="*{enabled}" value="true"/><input type="radio" th:field="*{enabled}" value="true"/></p>
+		<form th:object="${productFormWrapper}" action="#" th:action="@{/products/productUpdate}" method="post">
+			<input type="hidden" th:field="*{product.productId}"/>
+			<p>Code: <input type="text" th:field="*{product.code}"/></p>
+			<p>Brand: <input type="text" th:field="*{product.brand}"/></p>
+			<p>Name: <input type="text" th:field="*{product.name}"/></p>
+			<p>Description: <input type="text" th:field="*{product.description}"/></p>
+			<p>Cost: <input type="number" th:field="*{product.cost}"/></p>
+			<p>Sale Price: <input type="number" th:field="*{product.salePrice}"/></p>
+			<p>Enabled: <input type="radio" th:field="*{product.enabled}" value="true"/><input type="radio" th:field="*{product.enabled}" value="true"/></p>
+			<p>Minimum Amount: <input type="number" th:field="*{minimumAmount}"/></p>
+			<p>Desirable Amount: <input type="number" th:field="*{desirableAmount}"/> </p>
 			<input type="submit" value="Editar Producto"/>
 		</form>		
 	</body>

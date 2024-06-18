@@ -54,7 +54,7 @@
 							<td>
 							   <a th:href="@{/products/edit/}+${productoStock.product.productId}" class="btn btn-warning"> Edit </a>
 							   <a th:href="@{/products/remove/}+${productoStock.product.productId}" class="btn btn-danger" onclick = "return ConfirmDelete()"> Remove </a>
-							   <a th:href="@{/supplyOrder/supplyOrderAdd/}+${productoStock.product.productId}" class="btn btn-primary" onclick = "return ConfirmDelete()"> Generate Supply Order </a>
+							   <a th:href="@{/supplyOrders/supplyOrderAdd/}+${productoStock.product.productId}" class="btn btn-primary" onclick = "return ConfirmDelete()"> Generate Supply Order </a>
 						    </td>
 						</tr>
 					</tbody>

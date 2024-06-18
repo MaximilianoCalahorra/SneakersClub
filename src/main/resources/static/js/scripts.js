@@ -7,7 +7,7 @@
 // Scripts
 // 
 
-window.addEventListener('DOMContentLoaded', event => {
+/*window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
     var navbarShrink = function () {
@@ -52,3 +52,19 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+*/
+function mostrarAlerta() {
+
+
+    Swal.fire({
+        title: 'Felicidades!',
+        text: 'Compra realizada con exito',
+        icon: 'success',
+        confirmButtonText: 'Cerrar'
+    })
+
+}
+
+
+
+

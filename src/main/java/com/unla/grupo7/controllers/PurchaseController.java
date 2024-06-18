@@ -54,7 +54,7 @@ public class PurchaseController
 		
 		try 
 		{
-			
+			//ACA SE ROMPE!!!
 			stockService.availableStock(productId, amount); //Verificamos que el stock sea suficiente. En caso de que no levanta la excepción.
 			Product product = productService.findByProductId(productId); //Obtenemos el producto a comprar.
 			System.out.println(product.getBrand());

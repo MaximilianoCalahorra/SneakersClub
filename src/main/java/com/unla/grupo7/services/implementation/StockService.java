@@ -113,6 +113,7 @@ public class StockService implements IStockService{
 	public void availableStock(int productId, int amount) throws Exception
 	{
 		int stockId = findByProduct(productId).getStockId(); //Obtenemos el id del stock del producto.
+		///SE ROMPE!!!
 		int totalStock = actualAmount(stockId); //Obtenemos la cantidad de stock que hay del producto.
 		
 		//Si el stock del producto no alcanza para satisfacer la demanda:

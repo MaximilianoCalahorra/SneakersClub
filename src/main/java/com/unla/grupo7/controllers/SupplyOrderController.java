@@ -29,7 +29,6 @@ public class SupplyOrderController {
 		this.productService = productService;
 	}
 	
-	
 	//1- AGREGAR PRODUCTOS
 	@GetMapping("/supplyOrderAdd/{productId}")
 	public ModelAndView supplyOrderAdd(@PathVariable int productId) {

@@ -1,4 +1,4 @@
-package com.unla.grupo7.controllers;
+ package com.unla.grupo7.controllers;
 
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -23,36 +23,86 @@ public class ProductController {
 	private IStockService stockService;
 	
 	//CONSTRUCTOR DEL SERVICIO
-	public ProductController(IProductService productService) {
+	public ProductController(IProductService productService, IStockService stockService) {
 		super();
 		this.productService = productService;
+		this.stockService = stockService;
 	}
-
-	//1- AGREGAR PRODUCTOS
-	@GetMapping("/productAdd")
-	public ModelAndView productAdd() {
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_ADD);
-		modelAndView.addObject("product", new Product ());
+	
+	//CREAMOS UN WRAPPER PARA PODER PASAR VARIAS VARIABLES DENTRO DE LA VISTA. 
+	//EN ESTE CASO NECESITAMOS PASAR AL Product, AL desirableAmount Y AL minimumAmount.
+	public class ProductFormWrapper {
+		
+		private Product product = new Product ();
+		private int desirableAmount = 0;
+		private int minimumAmount = 0;
+		
+		//GETTERS
+		public Product getProduct() {
+			return product;
+		}
+		
+		public int getDesirableAmount() {
+			return desirableAmount;
+		}
+		
+		public void setDesirableAmount(int desirableAmount) {
+	            this.desirableAmount = desirableAmount;
+	    }
+		
+		public int getMinimumAmount() {
+			return minimumAmount;
+		}
+		
+		public void setMinimumAmount(int minimumAmount) {
+            this.minimumAmount = minimumAmount;
+		}
+	}
+	
+	//1- CUANDO SE PETICIONA /ourShoes ENVIAMOS LA VISTA PRINCIPAL --> products/ourShoes/
+	@GetMapping("/ourShoes")
+	public ModelAndView ourShoes() {
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.OURSHOES);
+		List <Product> listaProducts = productService.getAll();
+		modelAndView.addObject("listaProducts", listaProducts);
 		return modelAndView;
 	}
 	
-	//2- GUARDAMOS EL PRODUCTO EN LA BD
+	
+	//2- AGREGAR PRODUCTOS
+	@GetMapping("/productAdd")
+	public ModelAndView productAdd() {
+		
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_ADD);
+		
+		//PASAMOS EL WRAPPER A LA VISTA
+		modelAndView.addObject("productFormWrapper", new ProductFormWrapper ());
+		
+		return modelAndView;
+	}
+	
+	//3- GUARDAMOS EL PRODUCTO EN LA BD
 	@PostMapping("/productSave") 
-	public ModelAndView create(@ModelAttribute("product") Product product, @ModelAttribute("stock") Stock stock) {
+	public ModelAndView create(@ModelAttribute ("productFormWrapper") ProductFormWrapper wrapper) {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_SAVE);
 		try 
 		{
 			//INSERTAMOS NUESTRO PRODUCTO EN LA BD
-			productService.insert(product);
+			productService.insert(wrapper.getProduct());
 			
 			//INICIALIZAMOS EL STOCK
-			
+			Stock stock = new Stock (wrapper.getProduct(), wrapper.getDesirableAmount(), wrapper.getMinimumAmount());
+			stock = stockService.insertOrUpdate(stock);
 		} 
 		catch(Exception e)
 		{
 			e.getMessage();
 		}
-		modelAndView.addObject("product", product);
+		
+		//PASAMOS LOS OBJETOS A LA VISTA.
+		modelAndView.addObject("product", wrapper.getProduct());
+		modelAndView.addObject("desirableAmount", wrapper.getDesirableAmount());
+		modelAndView.addObject("minimumAmount", wrapper.getMinimumAmount());
 		return modelAndView;
 	}
 	
@@ -63,33 +113,26 @@ public class ProductController {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_EDIT);
 		
 		Product product = productService.findByProductId(productId);
+		
 		modelAndView.addObject("product", product);
 		
 		return modelAndView;
 	}
 	
 	
-	//5- REMOVER EL PRODUCTO
+	//5- REMOVER EL PRODUCTO (BAJA LOGICA)
 	@GetMapping("/remove/{productId}")
 	public ModelAndView remove(@PathVariable int productId) throws Exception {
 		
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_REMOVE);
+		
 		Product product = productService.findByProductId(productId);
-		productService.remove(productId);
+		
+		productService.removeLogical(productId);
+		
 		modelAndView.addObject("product", product);
+		
 		return modelAndView;
 		
 	}
-	
-
-	//1- Cuando se peticiona /ourShoes enviamos la vista --> products/ourShoes.
-	@GetMapping("/ourShoes")
-	public ModelAndView ourShoes() {
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.OURSHOES);
-		List <Product> listaProducts = productService.getAll();
-		modelAndView.addObject("listaProducts", listaProducts);
-		return modelAndView;
-	}
-	
-
 }

@@ -17,7 +17,6 @@ body {
 	height:100%;
 	font-family: "Oswald", sans-serif;
 	background-image: url('/assets/img/backgroundLogin.webp');
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -45,7 +44,6 @@ main {
      width: auto;
 }
 
-
 .login { 
 	position: absolute;
 	top: 50%;
@@ -54,7 +52,7 @@ main {
 	width:300px;
 	height:300px;
 }
-.login h3 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; font-size: xx-large;}
+.login > h3 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; font-size: xx-large;}
 
 input { 
 	width: 100%; 
@@ -63,7 +61,7 @@ input {
 	border: none;
 	outline: none;
 	padding: 10px;
-	font-size: 13px;
+	font-size: 15px;
 	color: #fff;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	border: 1px solid rgba(0,0,0,0.3);

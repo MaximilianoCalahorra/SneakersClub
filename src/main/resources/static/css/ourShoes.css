@@ -1,155 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
-
-/**{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito', sans-serif;
-    font-size: 20px;
-}
-
-body{
-	
-	background-color: white;
-	
-}*/
-/*
-.container-cards{
-	
-	display: flex;
-	background-color: aqua;
-	
-}
-
-.container-cards .cards{
-	
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	width: 240px;
-	height: 340px;
-	background-color: #fff;
-	box-shadow: 0 5px 15px rgba(0,0,0,.25);
-	border-radius: 5px;
-	
-	
-	
-	
-	width: 405px;
-	display: flex;
-	align-items: column;
-	background-color: whitesmoke;
-	margin: 50px;
-	padding: 50px;
-	border-radius: 7px;
-	border: 1px solid black;
-	
-}
-
-.container-cards .cards .imgbox{
-	
-	height: 100%;
-	box-sizing: border-box;
-	
-}
-
-.container-cards .cards .imgbox img{
-	
-	display: block;
-	width: 90%;
-	margin: 20px auto 0;
-	
-}
-
-.container-cards .cards details{
-
-	position: absolute;
-	width: 100%;
-	bottom: 0px;
-	background: #fff;
-	padding: 10px;
-	box-sizing: border-box;
-	box-shadow: 0 0 0 rgba(0,0,0,0);	
-	transition: .5s;	
-
-}
-
-.container-cards .cards details h2{
-	
-	margin: 0;
-	padding: 0;
-	font-size: 16px;
-	width: 100%;
-	
-}
-
-.container-cards .cards details h2 span{
-	
-	font-size: 12px;
-	color: #ccc;
-	font-weight: normal;
-	
-	
-}
-
-.container-cards .cards details price{
-	
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	font-weight: bold;
-	color: #ff4faf;
-	font-size: 20px;
-	
-}
-
-.container-cards .cards label{
-	
-	display: block;
-	margin-top: 5px;
-	font-weight: bold;
-	font-size: 14px;
-	
-}
-
-.container-cards .cards u1{
-	
-	display: block;
-	margin: 0;
-	padding: 0;
-	
-}
-
-.container-cards .cards u1 l1{
-	
-	list-style: none;
-	margin: 5px 5px 0;
-	font-size: 12px;
-	font-weight: bold;
-	color: #ccc;
-
-}
-
-.container-cards .cards u1 l1:first-child{
-	
-	margin-left: 0;
-}
-*/
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Oswald", sans-serif;
   
 }
 
 body {
-  font-family: var(--body-font);
-  background-color: var(--body-color);
-  color: var(--text-color);
+  
+  	background: url(../assets/img/backgroundCatalogo.jpg);
+ 	color: var(--text-color);
 
-  }
+
+	}
 
 img {
   display: block;
@@ -158,30 +22,43 @@ img {
 }
 
 /*=============== CARD ===============*/
-.container {
-  display: grid;
-  place-items: center;
 
-  padding-block: 5rem;
+.container {
+
+  place-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 
 }
 
 .card__container {
-  display: grid;
-  row-gap: 3.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 35px;
+
   
 }
 
 .card__article {
   position: relative;
   overflow: hidden;
-  background-color: grey;
+  background-color: white;
   border: 1px solid black;
-  height: 500px;
+  height: 400px;
+  width: 30%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+ 
 }
 
 .card__img {
-  width: 328px;
+  width: 100%;
+  height: auto;
   border-radius: 1.5rem;
 }
 
@@ -217,7 +94,12 @@ img {
   text-decoration: none;
   font-size: var(--small-font-size);
   font-weight: 500;
-  color: var(--first-color);
+  color: white;
+  background-color: #007BFF;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+ 
 }
 
 .card__button:hover {
@@ -225,6 +107,7 @@ img {
 }
 
 /* Naming animations in hover */
+
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -243,7 +126,9 @@ img {
   animation: remove-data 1s forwards;
 }
 
+
 /* Card animation */
+
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -281,44 +166,6 @@ img {
   }
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 340px) {
-  .container {
-    margin-inline: 1rem;
-  }
-
-  .card__data {
-    width: 250px;
-    padding: 1rem;
-  }
-}
-
-/* For medium devices */
-@media screen and (min-width: 768px) {
-  .card__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-  }
-}
-
-/* For large devices */
-@media screen and (min-width: 1120px) {
-  .container {
-    height: 100vh;
-  }
-
-  .card__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card__img {
-    width: 348px;
-  }
-  .card__data {
-    width: 316px;
-    padding-inline: 2.5rem;
-  }
-}
 
 
 

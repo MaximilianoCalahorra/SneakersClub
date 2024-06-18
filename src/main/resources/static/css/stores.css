@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', sans-serif;
-    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    
 }
 
 body{
@@ -13,71 +13,6 @@ body{
 	
 }
 
-.header{
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    height: 100px;
-    padding: 5px 10%;
-}
-
-.header .logo{
-    cursor: pointer;
-}
-
-.header .logo img{
-    height: 70px;
-    width: auto;
-    transition: all 0.3s;
-    border-radius: 16px;
-}
-
-.header .logo img:hover{
-    transform: scale(1.2);
-}
-
-.header .nav-links{
-    list-style: none;
-}
-
-.header .nav-links .link{
-    display: inline-block;
-    padding: 0 20px;    
-
-}
-
-.header .nav-links .link:hover{
-    transform: scale(1.1);
-}
-
-.header .nav-links .link{
-    font-size: 700;
-    color: black;
-    text-decoration: none;    
-}
-
-.header .nav-links .link:hover{
-    color: #ffbc0e;
-}
-
-.header .btn button{
-    font-weight: 700;
-    color: black;
-    padding: 9px 25px;
-    background: #eceff1;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-.header .btn button:hover{
-    background-color: rgb(34, 40, 49);
-    color: #ffbc0e;
-    transform: scale(1.1);
-}
 
 /* ******************* */
 
@@ -87,7 +22,7 @@ main .title{
 	align-items: center;
 	justify-content: center;
 	margin: 50px;
-	background-color: antiquewhite;
+	background-color: whitesmoke;
 	border-radius: 16px;
 	padding: 16px;
 	
@@ -103,17 +38,14 @@ main .title h1{
 main .container{
 	
 	display: flex;
-	align-items: left;
-	justify-content: left;	
+	align-items: center;
+	justify-content: center;	
 	background-color: transparent;
 	padding: 100px;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	margin-left: 50px;
-	margin-right: 50px;
 	border-radius: 5px;
-	justify-content: space-around;
-	box-shadow: 0px 0px 48px white;
+	flex-direction: row;
+	box-shadow: 0px 0px 20px black;
+	max-width: 80%;
 	
 }
 
@@ -128,8 +60,10 @@ main .container .location{
 	
 	padding: 25px;
 	border-radius: 16px;
-	width: 400px;
-	height: 500px;
+	width: 350px;
+	height: 600px;
+	margin: 15px;
+	box-shadow: 0px 0px 20px black;
 
 	
 }
@@ -166,46 +100,4 @@ main .container .location a{
 }
 
 
-/* Estilos del FOOTER */
-.contenedor{
 
-    margin: 25px;
-    background-color: rgb(34, 40, 49);
-    border-radius: 22px;
-	box-shadow: 0px 0px 48px black;
-
-}
-.container {
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;    
-
-}
-
-.container .logo img {
-    margin: 5px;
-    border-radius: 16px;
-    width: 140px;
-    
-}
-
-.container h3 {
-    color: #f2f2f2;
-    font-family: 'Dancing Script', cursive;
-    font-size: 17px;
-
-}
-
-.container p {
-    color: #f2f2f2;
-
-}
-
-.container .datos-admin {
-    color: #f2f2f2;
-    
-    text-align: center;
-}
-/* -------------------------------------- */

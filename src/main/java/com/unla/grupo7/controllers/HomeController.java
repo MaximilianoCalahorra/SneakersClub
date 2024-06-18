@@ -72,7 +72,7 @@ public class HomeController {
 			List <ProductStockWrapper> listaProductosStock = new ArrayList <ProductStockWrapper>();
 			
 			//OBTENEMOS LA LISTA DE PRODUCTOS
-			List <Product> listaProductos = productService.getAll();
+			List <Product> listaProductos = productService.getAllInOrder();
 			
 			for (int i = 0; i < listaProductos.size(); i ++) {
 				

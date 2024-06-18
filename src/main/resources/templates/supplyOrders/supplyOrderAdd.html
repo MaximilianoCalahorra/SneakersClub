@@ -12,12 +12,26 @@
 			<section>
 				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrder/supplyOrderSave}" method="post">
 					
+					
+					<input type="hidden" th:field="*{product.productId}"/>
+					<input type="hidden" th:field="*{product.code}"/>
+					<input type="hidden" th:field="*{product.brand}"/>
+					<input type="hidden" th:field="*{product.name}"/>
+					<input type="hidden" th:field="*{product.description}"/>
+					<input type="hidden" th:field="*{product.cost}"/>
+					<input type="hidden" th:field="*{product.salePrice}"/>
+					<input type="hidden" th:field="*{product.enabled}"/>
+					
 					<p>Supplier: <input type="text" th:field="*{supplier}"/></p>
 					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1"/></p>
-					<p>State: <input type="text" th:field="*{state}"/></p>
-					<p>Code: <input type="text" name ="code"/></p>
 					
-					<input type="submit" value="Buy Product"/>
+					State:
+					<select th:field="*{state}" required>
+				    <option value="In process">In process</option>
+				    <option value="Delivered">Delivered</option>
+					</select>
+					
+					<input type="submit" value="Generate Supply Order"/>
 				</form>	
 			</section>
 		</main>

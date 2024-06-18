@@ -101,10 +101,7 @@ public class StockService implements IStockService{
 		int actualAmount = 0;
 		for(Lot lot: lotService.findByStock(stockId)) 
 		{
-<<<<<<< HEAD
-		
-=======
->>>>>>> 532c219e631650d54f640bd8f6b921751ee0fb9c
+
 			actualAmount += lot.getExistingAmount();
 		}
 		return actualAmount;
@@ -120,18 +117,10 @@ public class StockService implements IStockService{
     
 		int stockId = findByProduct(productId).getStockId(); //Obtenemos el id del stock del producto.
 		int totalStock = actualAmount(stockId); //Obtenemos la cantidad de stock que hay del producto.
-<<<<<<< HEAD
-	
-=======
->>>>>>> 532c219e631650d54f640bd8f6b921751ee0fb9c
 		
 		//Si el stock del producto no alcanza para satisfacer la demanda:
 		if(amount > totalStock) 
 		{
-<<<<<<< HEAD
-		
-=======
->>>>>>> 532c219e631650d54f640bd8f6b921751ee0fb9c
 			throw new Exception("ERROR product stock is insufficient."); //Generamos una excepción indicando que el stock es insuficiente.
 		}
 		
@@ -148,10 +137,7 @@ public class StockService implements IStockService{
 			//Si el lote tiene unidades del producto:
 			if(lot.getExistingAmount() > 0) 
 			{
-<<<<<<< HEAD
-				
-=======
->>>>>>> 532c219e631650d54f640bd8f6b921751ee0fb9c
+
 				int newExistingAmount = lot.getExistingAmount(); //La nueva cantidad en principio es la actual. 
 						
 				//Si la cantidad existente en el lote alcanza para satisfacer la demanda:

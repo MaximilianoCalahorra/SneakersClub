@@ -13,11 +13,15 @@
 		<link href="/css/navBar.css" rel="stylesheet" />
     </head>
 	<body>
+		<main>
+			<section>
+				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrders/supplyOrderSave}" method="post">
+					
 		<div th:include="navBar/navBarAdmin.html::div-header"></div>
 			
 		<section class="formProductSection">
 				<h1>Create a new Supply Order</h1>
-				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrder/supplyOrders}" method="post">
+				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrders/supplyOrders}" method="post">
 					
 					<input type="hidden" th:field="*{product.productId}"/>
 					<input type="hidden" th:field="*{product.code}"/>

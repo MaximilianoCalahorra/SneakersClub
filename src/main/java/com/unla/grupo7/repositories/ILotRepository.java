@@ -77,4 +77,8 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock s INNER JOIN FETCH l.supplyOrder sp INNER JOIN FETCH sp.product WHERE s.stockId = (:stockId)")
 	public abstract List<Lot> findByStock(@Param("stockId")int stockId);
 	
+	//Encontramos los lotes con determinado stock:
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.supplyOrder so WHERE so.supplyOrderId = (:supplyOrderId)")
+	public abstract Lot findBySupplyOrder(@Param("supplyOrderId")int supplyOrderId);
+	
 }

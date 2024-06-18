@@ -112,6 +112,12 @@ public class LotService implements ILotService{
 	{	
 		return lotRepository.findByStock(stockId);
 	}
+	
+	@Override
+	public Lot findBySupplyOrder(int supplyOrderId) {
+		
+		return lotRepository.findBySupplyOrder(supplyOrderId);
+	}
 
 	@Override
 	public List<Lot> getAll() {
@@ -140,6 +146,8 @@ public class LotService implements ILotService{
 			return false;
 		}
 	}
+
+
 
 
 

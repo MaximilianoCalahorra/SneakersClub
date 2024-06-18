@@ -1,12 +1,8 @@
 package com.unla.grupo7.entities;
 
 import java.time.LocalDateTime;
-import java.util.Set;
-
 import org.hibernate.annotations.CreationTimestamp;
-
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.servlet.view.RedirectView;
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.SupplyOrder;
 import com.unla.grupo7.helpers.ViewRouteHelper;
@@ -88,7 +88,7 @@ public class SupplyOrderController {
 	}
 	
 	@GetMapping("/registerDelivered/{supplyOrderId}")
-	public String registerDelivered(@PathVariable int supplyOrderId) 
+	public RedirectView registerDelivered(@PathVariable int supplyOrderId) 
 	{
 		try
 		{
@@ -100,6 +100,6 @@ public class SupplyOrderController {
 		{
 			e.printStackTrace();
 		} 
-		return "redirect:/supplyOrder/supplyOrders"; //Redireccionamos a la lista de SupplyOrder.
+		return new RedirectView (ViewRouteHelper.REDIRECT_SUPPLY_ORDERS); //Redireccionamos a la lista de SupplyOrder.
 	}
 }

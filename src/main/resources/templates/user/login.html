@@ -10,9 +10,11 @@
 	<body>
 	   
 		<main>
-		   
+			<div class="loginTitle">
+				<h1>SneakersClub<img src="/assets/img/iconoPagina.png" alt="logo-img" /></h1>
+			</div>
 			   <div class="login">
-			   	<h1>Login</h1>
+			   	<h3>Login</h3>
 			       <form th:action="@{/loginprocess}" method="post">
 			       	<input type="text" name="username" id="username" placeholder="Username" required="required" />
 			           <input type="password" name="password" id="password" placeholder="Password" required="required" />

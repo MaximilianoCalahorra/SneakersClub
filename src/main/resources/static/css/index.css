@@ -314,11 +314,12 @@ body{
 	border-radius: 5px;
 	background-color: green;
 	color: white;
+	transition: all 0.3s;
 }
 
 .tableTitle > button:hover {
 	
-	font-weight: bold;
+	 transform: scale(1.2);
 }
 
 .tableTitle > button > a {
@@ -346,6 +347,70 @@ td, th {
     border: solid 1px;
     text-align: center;
 }
+
+/* ***************** */
+
+
+
+.superContainer{
+	
+	text-align: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 150px;
+	margin-left: 600px;
+	margin-right: 600px;
+	padding: 20px;
+	background-color: lightgrey;
+	border: 1px solid black;
+	
+}
+
+.superContainer .cont{
+	
+	display: flex;
+	flex-direction: row;
+
+	
+}
+
+.superContainer .cont .containerProduct{
+	
+	margin: 50px;
+	
+}
+
+.superContainer .cont .containerProduct p{
+	
+	font-size: larger;
+	
+}
+
+.superContainer .btn a{
+	
+	text-decoration: none;
+	color: black;
+	font-size: larger;
+	
+}
+
+.superContainer .btn{
+
+	transition: all 0.3s;
+	
+}
+
+.superContainer .btn:hover{
+
+	transform: scale(1.2);
+	
+}
+
+
+
+
+
 
 
 

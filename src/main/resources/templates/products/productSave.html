@@ -13,15 +13,32 @@
 		<link href="/css/footer.css" rel="stylesheet" />
     </head>
     <body>
-		<h1>Product Information</h1>
-		<p>Brand: <span th:text="${product.brand}"></span></p>
-		<p>Code: <span th:text="${product.code}"></span></p>
-		<p>Cost: <span th:text="${product.cost}"></span></p>
-		<p>Description: <span th:text="${product.description}"></span></p>
-		<p>Name: <span th:text="${product.name}"></span></p>
-		<p>Sale Price: <span th:text="${product.salePrice}"></span></p>
-		<p>Enabled: <span th:text="${product.enabled}"></span></p>
-		<p>Desirable Amount: <span th:text="${desirableAmount}"></span></p>
-		<p>Minimum Amount: <span th:text="${minimumAmount}"></span></p>
+		<div th:include="navBar/navBarAdmin.html::div-header"></div>
+		<section class="superContainer">
+			
+			
+			<h1>Product Information</h1>
+			<div class="cont">
+			
+				<div class="containerProduct">
+				
+					<p>Brand: <span th:text="${product.brand}"></span></p>
+					<p>Code: <span th:text="${product.code}"></span></p>
+					<p>Cost: <span th:text="${product.cost}"></span></p>
+					<p>Description: <span th:text="${product.description}"></span></p>
+					<p>Name: <span th:text="${product.name}"></span></p>
+				</div>
+				<div class="containerProduct">
+					<p>Sale Price: <span th:text="${product.salePrice}"></span></p>
+					<p>Enabled: <span th:text="${product.enabled}"></span></p>
+					<p>Desirable Amount: <span th:text="${desirableAmount}"></span></p>
+					<p>Minimum Amount: <span th:text="${minimumAmount}"></span></p>
+				</div>	
+			</div>			
+			<button class="btn btn-primary"><a href="/products/products" class="link">See products</a> </button>
+
+		</section>
+	
+		<div th:include="footer/footer.html::footer"></div>
 	</body>
 </html>

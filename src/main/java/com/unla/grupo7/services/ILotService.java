@@ -2,11 +2,7 @@ package com.unla.grupo7.services;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.unla.grupo7.entities.Lot;
-import com.unla.grupo7.entities.Stock;
 
 
 public interface ILotService 
@@ -55,6 +51,9 @@ public interface ILotService
 	
 	//Encontramos los lotes con determinado stock:
 	public List<Lot> findByStock(int stockId);
+	
+	//Encontramos el lote con determinado supplyOrder
+	public Lot findBySupplyOrder(int supplyOrderId);
 	
 	///Obtener:
 	

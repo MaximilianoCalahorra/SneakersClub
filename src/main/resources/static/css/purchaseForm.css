@@ -6,16 +6,19 @@
 	font-family: "Oswald", sans-serif;
 }
 
-section{
+
+.sectionPurchase{
 	
 	background-color: white;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	
+	
 }
 
-section .img-box img{
+.sectionPurchase .img-box img{
 	
 	width: 600px;
 	height: 600px;
@@ -23,13 +26,13 @@ section .img-box img{
 	
 }
 
-section .size-purchase h4{
+.sectionPurchase .size-purchase h4{
 	
 	font-size: medium;
 	
 }
 
-section .size {
+.sectionPurchase .size {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px; /* Espacio entre los botones */
@@ -38,7 +41,7 @@ section .size {
     padding: 20px;
 }
 
-section .button-size {
+.sectionPurchase .button-size {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -49,11 +52,11 @@ section .button-size {
     transition: background-color 0.3s;
 }
 
-section .button-size:hover {
+.sectionPurchase .button-size:hover {
     background-color: #e0e0e0;
 }
 
-section .button-purchase{
+.sectionPurchase .button-purchase{
 	
 	display: flex;
 	align-items: center;
@@ -62,13 +65,13 @@ section .button-purchase{
 	
 }
 
-section .button-purchase .buyNew {
+.sectionPurchase .button-purchase .buyNew {
 	
 	margin: 20px;
 	height: 73px;
 }
 
-section .button-purchase .buyNew .collapse .card-body form{
+.sectionPurchase .button-purchase .buyNew .collapse .card-body form{
 	
 	display: flex;
 	flex-direction: column;
@@ -76,14 +79,14 @@ section .button-purchase .buyNew .collapse .card-body form{
 	
 }
 
-section .button-purchase .buyNew .collapse .card-body form input{
+.sectionPurchase .button-purchase .buyNew .collapse .card-body form input{
 	
 	width: 80%;
 	margin: 5px;
 	
 }
 
-section .button-purchase .buyNew .collapse .card-body form .submit{
+.sectionPurchase .button-purchase .buyNew .collapse .card-body form .submit{
 	
 	text-decoration: none;
 	background-color: rgb(0, 136, 255);
@@ -92,20 +95,20 @@ section .button-purchase .buyNew .collapse .card-body form .submit{
 	padding: 2px;
 }
 
-section .button-purchase .buyNew .collapse .card-body form button{
+.sectionPurchase .button-purchase .buyNew .collapse .card-body form button{
 	
 	width: 80%;
 	margin: 5px;
 	
 }
 
-section .button-purchase .buyUsed{
+.sectionPurchase .button-purchase .buyUsed{
 	
 	margin: 20px;
 	
 }
 
-section .button-purchase .button-new{
+.sectionPurchase .button-purchase .button-new{
 	
 	background-color: rgb(255, 128, 128);
 	border: 1px solid #ddd;
@@ -119,11 +122,11 @@ section .button-purchase .button-new{
 	
 }
 
-section .button-purchase .button-new:hover {
+.sectionPurchase .button-purchase .button-new:hover {
     background-color: rgb(0, 136, 255);
 }
 
-section .button-purchase .button-used{
+.sectionPurchase .button-purchase .button-used{
 	
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -135,51 +138,17 @@ section .button-purchase .button-used{
 	width: 150px;
 }
 
-section .terms .learnMore:hover{
+.sectionPurchase .terms .learnMore:hover{
 	
 	color: blue;
 	cursor: pointer;
 	
 }
 
-section .local .place:hover{
+.sectionPurchase .local .place:hover{
 	
 	color: blue;
 	cursor: pointer;
 	
 }
-
-section .uno {
-	
-	
-	padding: 50px;
-	border: 1px solid;
-	box-shadow: 0px 0px 12px black;
-	border-radius: 16px;
-	
-	
-	
-}
-
-section .dos .tres{
-	
-	display: flex;
-	align-items: center;
-	text-align: center;
-	
-	margin: 15px;
-	padding: 20px;
-	background-color: whitesmoke;
-	border-radius: 16px;
-	width: 300px;
-
-	
-}
-
-section .dos .tres h2{
-	
-	font-size: 25px;
-	
-}
-
 

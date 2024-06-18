@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.Purchase;
+import com.unla.grupo7.entities.Stock;
 import com.unla.grupo7.helpers.ViewRouteHelper;
 import com.unla.grupo7.services.IProductService;
 import com.unla.grupo7.services.IPurchaseService;
@@ -40,7 +41,9 @@ public class PurchaseController
 	{
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PURCHASE_FORM); //Indicamos la vista a cargar.
 		Product product = productService.findByProductId(productId); //Obtenemos el producto por su id.
+		Stock stock = stockService.findByProduct(productId);
 		modelAndView.addObject("product", product); //Agregamos el producto a la vista.
+		modelAndView.addObject("stock", stock); //Agregamos el stock a la vista.
 		return modelAndView; //Retornamos la vista.
 	}
 	
@@ -57,20 +60,17 @@ public class PurchaseController
 			//ACA SE ROMPE!!!
 			stockService.availableStock(productId, amount); //Verificamos que el stock sea suficiente. En caso de que no levanta la excepción.
 			Product product = productService.findByProductId(productId); //Obtenemos el producto a comprar.
-			//AVANZAMOS
 			double purchasePrice = product.getSalePrice() * amount; //Calculamos el total de la compra.
-			//SEGUMOS AVANZANDO SOMOS LA MAQUINA
 			Purchase purchase = new Purchase(product, purchasePrice, amount, methodOfPay); //Generamos un objeto 'Purchase' con los datos de la compra.
 			
 			purchaseService.insert(purchase); //Guardamos la compra en la base de datos.
 			
 			modelAndView.addObject("product", product);
-			
 			modelAndView.addObject("purchase", purchase);
 		} 
 		catch(Exception e) 
 		{
-			e.getMessage(); 
+			modelAndView.addObject("error", e.getMessage()); 
 		}
 		return modelAndView;
 	}

@@ -49,4 +49,9 @@ public interface IProductRepository extends JpaRepository<Product, Serializable>
 	@Query("SELECT p FROM Product p WHERE p.salePrice >= (:minimumSalePrice) AND p.salePrice <= (:maximumSalePrice)")
 	public abstract List<Product> findBySalePriceRange(@Param("minimumSalePrice")double minimumSalePrice, 
 													   @Param("maximumSalePrice")double maximumSalePrice); 
+
+	
+	//Obtenemos los productos ORDENADOS:
+	@Query("from Product p order by p.name asc")
+	public List<Product> getAllInOrder();
 }

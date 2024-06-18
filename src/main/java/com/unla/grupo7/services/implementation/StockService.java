@@ -101,6 +101,7 @@ public class StockService implements IStockService{
 		int actualAmount = 0;
 		for(Lot lot: lotService.findByStock(stockId)) 
 		{
+
 			actualAmount += lot.getExistingAmount();
 		}
 		return actualAmount;
@@ -136,6 +137,7 @@ public class StockService implements IStockService{
 			//Si el lote tiene unidades del producto:
 			if(lot.getExistingAmount() > 0) 
 			{
+
 				int newExistingAmount = lot.getExistingAmount(); //La nueva cantidad en principio es la actual. 
 						
 				//Si la cantidad existente en el lote alcanza para satisfacer la demanda:

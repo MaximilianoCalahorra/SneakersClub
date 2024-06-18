@@ -4,7 +4,9 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: black solid 3px;
+	height: 80px;
 }
+
 
 .header .logo{
     cursor: pointer;
@@ -15,6 +17,7 @@
     width: auto;
     transition: all 0.3s;
     border-radius: 16px;
+	margin-left: 20px;
 }
 
 .header .logo img:hover{
@@ -26,6 +29,7 @@
 	align-items: center;
     list-style: none;
     justify-content: center;
+	margin-right: 20px;
 }
 
 

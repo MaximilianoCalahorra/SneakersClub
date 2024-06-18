@@ -60,11 +60,10 @@ public class SupplyOrderController {
 	}
 	
 	///2- GUARDAR EN LA BD
-	@PostMapping("/supplyOrderSave") 
-	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
+	@PostMapping("/supplyOrders") 
+	public RedirectView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
 	{
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_SAVE);
-		
+
 		try {	
 			
 			supplyOrderService.insert(supplyOrder);
@@ -75,8 +74,8 @@ public class SupplyOrderController {
 			
 		}
 		
-		modelAndView.addObject("supplyOrder", supplyOrder);
-		return modelAndView;
+		//modelAndView.addObject("supplyOrder", supplyOrder);
+		return new RedirectView (ViewRouteHelper.REDIRECT_SUPPLY_ORDERS);
 	}
 	
 	///3 LISTA DE 

@@ -56,7 +56,7 @@ public class SupplyOrderController {
 	
 	///2- GUARDAR EN LA BD
 	@PostMapping("/supplyOrders") 
-	public String create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
+	public RedirectView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
 	{
 		//ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDERS);
 		
@@ -73,7 +73,7 @@ public class SupplyOrderController {
 		}
 		
 		//modelAndView.addObject("supplyOrder", supplyOrder);
-		return "redirect:/supplyOrder/supplyOrders";
+		return new RedirectView (ViewRouteHelper.REDIRECT_SUPPLY_ORDERS);
 	}
 	
 	///3 LISTA DE 

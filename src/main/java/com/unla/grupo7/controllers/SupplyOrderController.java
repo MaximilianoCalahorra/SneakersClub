@@ -55,12 +55,12 @@ public class SupplyOrderController {
 	}
 	
 	///2- GUARDAR EN LA BD
-	@PostMapping("/supplyOrderSave") 
-	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
+	@PostMapping("/supplyOrders") 
+	public String create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
 	{
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_SAVE);
+		//ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDERS);
 		
-		System.out.println("Product ID" + supplyOrder.getProduct().getName());
+		//System.out.println("Product ID" + supplyOrder.getProduct().getName());
 		
 		try {	
 			
@@ -72,8 +72,8 @@ public class SupplyOrderController {
 			
 		}
 		
-		modelAndView.addObject("supplyOrder", supplyOrder);
-		return modelAndView;
+		//modelAndView.addObject("supplyOrder", supplyOrder);
+		return "redirect:/supplyOrder/supplyOrders";
 	}
 	
 	///3 LISTA DE 

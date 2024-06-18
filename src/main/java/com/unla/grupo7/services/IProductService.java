@@ -43,6 +43,9 @@ public interface IProductService
 	//Obtenemos los productos:
 	public List<Product> getAll();
 	
+	//Obtenemos los productos ORDENADOS:
+	public List<Product> getAllInOrder();
+	
 	///Agregar:
 	
 	//Agregamos un producto:

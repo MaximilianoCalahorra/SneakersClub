@@ -104,6 +104,12 @@ public class ProductService implements IProductService
 		return productRepository.findAll();
 	}
 	
+	//Obtenemos los productos ORDENADOS:
+	@Override
+	public List<Product> getAllInOrder(){
+		return productRepository.getAllInOrder();
+	}
+	
 	///Agregar o modificar:
 	
 	//Agregamos un producto:

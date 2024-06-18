@@ -109,10 +109,7 @@ public class LotService implements ILotService{
 	
 	@Override
 	public List<Lot> findByStock(int stockId) 
-	{
-		
-		System.out.println("a----------------");
-		
+	{	
 		return lotRepository.findByStock(stockId);
 	}
 

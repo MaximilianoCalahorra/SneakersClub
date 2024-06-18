@@ -336,7 +336,7 @@ body{
 }
 
 .tableTitle > h2 {
-	
+	font-weight: bold;
 	text-decoration: underline;
 	padding: 20px;
 }
@@ -347,6 +347,8 @@ td, th {
     border: solid 1px;
     text-align: center;
 }
+
+
 
 
 

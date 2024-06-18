@@ -108,8 +108,8 @@ public class LotService implements ILotService{
 	}
 	
 	@Override
-	public List<Lot> findByStock(int stockId)
-	{
+	public List<Lot> findByStock(int stockId) 
+	{	
 		return lotRepository.findByStock(stockId);
 	}
 

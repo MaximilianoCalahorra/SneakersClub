@@ -54,12 +54,14 @@ public class PurchaseController
 		
 		try 
 		{
-			
+			//ACA SE ROMPE!!!
 			stockService.availableStock(productId, amount); //Verificamos que el stock sea suficiente. En caso de que no levanta la excepción.
 			Product product = productService.findByProductId(productId); //Obtenemos el producto a comprar.
-			System.out.println(product.getBrand());
+			//AVANZAMOS
 			double purchasePrice = product.getSalePrice() * amount; //Calculamos el total de la compra.
+			//SEGUMOS AVANZANDO SOMOS LA MAQUINA
 			Purchase purchase = new Purchase(product, purchasePrice, amount, methodOfPay); //Generamos un objeto 'Purchase' con los datos de la compra.
+			
 			purchaseService.insert(purchase); //Guardamos la compra en la base de datos.
 			
 			modelAndView.addObject("product", product);
@@ -68,7 +70,7 @@ public class PurchaseController
 		} 
 		catch(Exception e) 
 		{
-			e.getMessage();
+			e.getMessage(); 
 		}
 		return modelAndView;
 	}

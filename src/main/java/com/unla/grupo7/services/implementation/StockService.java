@@ -17,9 +17,10 @@ public class StockService implements IStockService{
 	private IStockRepository stockRepository;
 	private ILotService lotService;
 	
-	public StockService (IStockRepository stockRepository) {
+	public StockService (IStockRepository stockRepository, ILotService lotService) {
 		
 		this.stockRepository = stockRepository;
+		this.lotService = lotService;
 		
 	}
 
@@ -112,6 +113,7 @@ public class StockService implements IStockService{
 	@Override
 	public void availableStock(int productId, int amount) throws Exception
 	{
+    
 		int stockId = findByProduct(productId).getStockId(); //Obtenemos el id del stock del producto.
 		int totalStock = actualAmount(stockId); //Obtenemos la cantidad de stock que hay del producto.
 		

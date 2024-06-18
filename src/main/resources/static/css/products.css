@@ -1,0 +1,40 @@
+.formProductSection {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formProductSection > h1 {
+	font-weight: bold;
+	padding: 20px;
+	text-decoration: underline;
+}
+
+.formProductSection > form {
+	border: solid 3px black;
+	border-radius: 5px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+.formProductSection > form > p {
+	padding: 3px;
+	font-weight: bold;
+}
+
+.formProductSection > form > p > input {
+	border-radius: 5px;
+}
+
+.btnSubmit {
+	border-radius: 5px;
+	padding: 5px;
+	font-weight: bold;
+	background-color: green;
+	color: white;
+}
+
+

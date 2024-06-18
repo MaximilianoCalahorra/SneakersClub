@@ -39,7 +39,8 @@ public class HomeController {
 		
 			modelAndView = new ModelAndView(ViewRouteHelper.ADMIN_INDEX);
 			
-			List <Product> listaProductos = productService.findByEnabled(true);
+			List <Product> listaProductos = productService.findByEnabledInOrder(true);
+			
 			modelAndView.addObject("listaProducts", listaProductos);
 		
 		//SI ES UN USER...	

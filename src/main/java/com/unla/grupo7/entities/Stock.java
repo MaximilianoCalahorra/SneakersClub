@@ -38,12 +38,14 @@ public class Stock {
 	}
 
 	///CONSTRUCTOR STOCK
-	public Stock(Product product, int desirableAmount, int minimumAmount, int actualAmount) {
+	public Stock(Product product, int desirableAmount, int minimumAmount) {
 		super();
 		this.product = product;
 		this.desirableAmount = desirableAmount;
 		this.minimumAmount = minimumAmount;
-		this.actualAmount = actualAmount;
+		//INICIALIZAMOS LA CANTIDAD ACTUAL DEL STOCK EN 0. 
+		//LA MISMA SE VA A ACTUALIZAR CON LAS supplyOrders.
+		this.actualAmount = 0;  
 	}
 	
 	

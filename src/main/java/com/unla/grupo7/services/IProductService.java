@@ -26,6 +26,9 @@ public interface IProductService
 	//Encontramos los productos que estén en determinado estado:
 	public List<Product> findByEnabled(boolean enabled);
 	
+	//Encontramos los productos que estén en determinado estado ordenado:
+	public List<Product> findByEnabledInOrder(boolean enabled);
+	
 	//Encontramos los productos que tengan un precio de venta mayor o igual a uno determinado:
 	public List<Product> findBySalePriceGreaterThanOrEqualTo(double salePrice); 
 		
@@ -57,4 +60,6 @@ public interface IProductService
 	
 	//Eliminamos físicamente un producto:
 	public boolean remove(int id);
+	
+	
 }

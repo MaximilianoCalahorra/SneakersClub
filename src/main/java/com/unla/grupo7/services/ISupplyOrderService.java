@@ -38,6 +38,8 @@ public interface ISupplyOrderService
 	//Obtenemos los pedidos de aprovisionamiento:
 	public List<SupplyOrder> getAll();
 	
+	
+	
 	///Agregar:
 	
 	//Agregamos un pedido de aprovisionamiento:

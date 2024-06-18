@@ -33,6 +33,10 @@ public interface IProductRepository extends JpaRepository<Product, Serializable>
 	//Encontramos los productos que estén en determinado estado:
 	public abstract List<Product> findByEnabled(boolean enabled);
 	
+	//Encontramos los productos que estén en determinado estado ordenada:
+	@Query("SELECT p FROM Product p WHERE p.enabled = (:enabled) order by p.name asc")
+	public abstract List<Product> findByEnabledInOrder(@Param("enabled")boolean enabled);
+	
 	//Encontramos los productos que tengan un precio de venta mayor o igual a uno determinado:
 	@Query("SELECT p FROM Product p WHERE p.salePrice >= (:salePrice)")
 	public abstract List<Product> findBySalePriceGreaterThanOrEqualTo(@Param("salePrice")double salePrice); 

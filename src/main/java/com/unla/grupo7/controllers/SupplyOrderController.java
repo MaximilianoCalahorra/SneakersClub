@@ -30,38 +30,54 @@ public class SupplyOrderController {
 		this.supplyOrderService = supplyOrderService;
 		this.productService = productService;
 	}
-
+	
+	public Product retornarProducto(Product p) {
+		return p;
+		
+	}
+	
+	
 	//1- AGREGAR PRODUCTOS
-	@GetMapping("/supplyOrderAdd")
-	public ModelAndView supplyOrderAdd() {
+	@GetMapping("/supplyOrderAdd/{productId}")
+	public ModelAndView supplyOrderAdd(@PathVariable int productId) {
 		
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_ADD);
-		modelAndView.addObject("supplyOrder", new SupplyOrder ());
+		SupplyOrder supplyOrder = new SupplyOrder();
+		
+		
+		try {
+			
+			Product p = productService.findByProductId(productId);
+			
+			supplyOrder.setProduct(p);
+			
+			modelAndView.addObject("supplyOrder", supplyOrder);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+			
 		return modelAndView;
 	}
 	
 	///2- GUARDAR EN LA BD
 	@PostMapping("/supplyOrderSave") 
-	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder, 
-			@RequestParam("code") String code)  ///recibe el codigo y lo busca el producto
+	public ModelAndView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
 	{
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_SAVE);
-		try {
-			System.out.println("CODE --> " + code);
+		
+		System.out.println("Product ID" + supplyOrder.getProduct().getName());
+		
+		try {	
 			
-			Product p = productService.findByCode(code);
+			supplyOrderService.insert(supplyOrder);
 			
-			System.out.println("ID PRODUCTO -> " + p.getProductId());
-			SupplyOrder s = new SupplyOrder(p, supplyOrder.getSupplier(), supplyOrder.getAmount(), 
-					supplyOrder.getState());
+		} catch(Exception e){
 			
-			System.out.println("GET AMOUNT -> "+supplyOrder.getAmount());
+			System.out.println(e.getMessage());
 			
-			supplyOrderService.insert(s);
-		} 
-		catch(Exception e){
-			
-			e.getMessage();
 		}
 		
 		modelAndView.addObject("supplyOrder", supplyOrder);

@@ -20,8 +20,8 @@
 			<p>Brand: <input type="text" th:field="*{product.brand}"/></p>
 			<p>Name: <input type="text" th:field="*{product.name}"/></p>
 			<p>Description: <input type="text" th:field="*{product.description}"/></p>
-			<p>Cost: <input type="number" th:field="*{product.cost}" min="0.01"/></p>
-			<p>Sale Price: <input type="number" th:field="*{product.salePrice}" min="0.01"/></p>
+			<p>Cost: <input type="number" th:field="*{product.cost}" min="1"/></p>
+			<p>Sale Price: <input type="number" th:field="*{product.salePrice}" min="1"/></p>
 			<p>Enabled: <input type="radio" th:field="*{product.enabled}" value="true"/><input type="radio" th:field="*{product.enabled}" value="true"/></p>
 			<p>Minimum Amount: <input type="number" th:field="*{minimumAmount}" min="1"/></p>
 			<p>Desirable Amount: <input type="number" th:field="*{desirableAmount}" min="1"/> </p>

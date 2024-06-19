@@ -62,6 +62,9 @@ public interface IPurchaseService
 	//Traemos todas las compras ordenadas de manera descendente por precio:
 	public abstract List<Purchase> getAllInOrderByPurchasePrice();
 	
+	//Traemos todas las compras ordenadas de manera descendente por fecha y hora:
+	public abstract List<Purchase> getAllInOrderByPurchaseDateTime();
+	
 	///Agregar:
 	
 	//Agregamos una compra:

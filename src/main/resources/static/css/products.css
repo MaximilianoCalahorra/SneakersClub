@@ -36,6 +36,7 @@
 	font-weight: bold;
 	background-color: green;
 	color: white;
+	transition: all 0.3s;
 }
 
 .btnSubmit:hover {

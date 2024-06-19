@@ -16,7 +16,7 @@
 		<div th:include="navBar/navBarAdmin.html::div-header"></div>
 		
 		<section class="formProductSection">
-			<h1>Create a new Product</h1>
+			<h1>CREATE A NEW PRODUCT:</h1>
 				<form th:object="${productFormWrapper}" action="#" th:action="@{/products/productSave}" method="post">
 					<input type="hidden" th:field="*{product.productId}"/>
 					<p>Code: <input type="text" th:field="*{product.code}" placeholder="Code" required/></p>

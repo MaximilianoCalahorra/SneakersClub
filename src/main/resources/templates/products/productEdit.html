@@ -19,16 +19,16 @@
 			<h1>Edit Product</h1>
 				<form th:object="${productFormWrapper}" action="#" th:action="@{/products/productUpdate}" method="post">
 					<input type="hidden" th:field="*{product.productId}"/>
-					<p>Code: <input type="text" th:field="*{product.code}" placeholder="Code"/></p>
-					<p>Brand: <input type="text" th:field="*{product.brand}" placeholder="Brand"/></p>
-					<p>Name: <input type="text" th:field="*{product.name}" placeholder="Name"/></p>
-					<p>Description: <input type="text" th:field="*{product.description}" placeholder="Description"/></p>
-					<p>Cost: <input type="number" th:field="*{product.cost}" placeholder="Cost" min="1"/></p>
-					<p>Sale Price: <input type="number" th:field="*{product.salePrice}" placeholder="Sale Price" min="1"/></p>
-					<p>Enabled: True <input type="radio" th:field="*{product.enabled}" value="true"/>
-					False <input type="radio" th:field="*{product.enabled}" value="false"/></p>
-					<p>Desirable Amount: <input type="number" th:field="*{desirableAmount}" placeholder="Desirable Amount" min="1"/>
-					<p>Minimum Amount: <input type="number" th:field="*{minimumAmount}" placeholder="Minimum Amount" min="1"></p>
+					<p>Code: <input type="text" th:field="*{product.code}" placeholder="Code" required/></p>
+					<p>Brand: <input type="text" th:field="*{product.brand}" placeholder="Brand" required/></p>
+					<p>Name: <input type="text" th:field="*{product.name}" placeholder="Name" required/></p>
+					<p>Description: <input type="text" th:field="*{product.description}" placeholder="Description" required/></p>
+					<p>Cost: <input type="number" th:field="*{product.cost}" placeholder="Cost" min="1" required/></p>
+					<p>Sale Price: <input type="number" th:field="*{product.salePrice}" placeholder="Sale Price" min="1" required/></p>
+					<p>Enabled: True <input type="radio" th:field="*{product.enabled}" value="true" required/>
+					False <input type="radio" th:field="*{product.enabled}" value="false" required/></p>
+					<p>Desirable Amount: <input type="number" th:field="*{desirableAmount}" placeholder="Desirable Amount" min="1" required/>
+					<p>Minimum Amount: <input type="number" th:field="*{minimumAmount}" placeholder="Minimum Amount" min="1" required></p>
 					<input type="submit" value="Edit Product" class="btnSubmit"/>
 				</form>					
 		</section>

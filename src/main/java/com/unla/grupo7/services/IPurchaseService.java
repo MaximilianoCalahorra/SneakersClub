@@ -2,7 +2,6 @@ package com.unla.grupo7.services;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import com.unla.grupo7.entities.Purchase;
 

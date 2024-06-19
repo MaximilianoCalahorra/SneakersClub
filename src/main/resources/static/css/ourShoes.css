@@ -8,6 +8,7 @@
 
 body {
  	color: var(--text-color);
+ 	background-color: lightgrey;
 }
 
 img {
@@ -19,13 +20,12 @@ img {
 /*=============== CARD ===============*/
 
 .container {
-
   place-items: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto;
+  padding: 20px;
 }
 
 .card__container {
@@ -39,7 +39,7 @@ img {
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 1px solid black;
+  border: 3px solid black;
   height: 400px;
   width: 30%;
   padding: 15px;
@@ -55,7 +55,7 @@ img {
 
 .card__data {
   width: 280px;
-  background-color: white;
+  background-color: black;
   padding: 1.5rem 2rem;
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
   border-radius: 1rem;
@@ -66,12 +66,12 @@ img {
   margin-inline: auto;
   opacity: 0;
   transition: opacity 1s 1s;
+  color: white;
 }
 
 .card__description {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: .25rem;
 }
 
 .card__title {
@@ -86,11 +86,10 @@ img {
   font-size: var(--small-font-size);
   font-weight: 500;
   color: white;
-  background-color: #007BFF;
+  background-color: red;
   padding: 10px 20px;
-  margin-top: 10px;
   border-radius: 5px;
- 
+  text-decoration: none;
 }
 
 .card__button:hover {
@@ -104,6 +103,11 @@ img {
   opacity: 1;
   transition: opacity .3s;
 }
+
+.card__article:hover .card__data > h2 {
+ padding-bottom: 20px;
+}
+
 
 .card__article:hover {
   animation: remove-overflow 2s forwards;

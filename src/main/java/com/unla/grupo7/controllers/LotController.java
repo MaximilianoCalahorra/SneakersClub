@@ -86,15 +86,4 @@ public class LotController {
 		
 		return modelAndView;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

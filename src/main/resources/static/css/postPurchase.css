@@ -1,3 +1,6 @@
+/* Importamos URL */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/*----------------------------------------------------------------*/
 *{
 	
 	box-sizing: border-box;
@@ -7,71 +10,54 @@
 }
 
 
-section .uno .uno-dos{
-	
-
-}
-section{
-	
-
-	background-color: white;
-	
-	margin: 50px;
-	border-radius: 5px;	
-	
+.purchaseTitle {
+	text-decoration: underline;
+	padding: 20px;
+	text-align: center;
 }
 
-section .uno-dos {
-	
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	gap: 20px;
-	align-items: start;
+.general {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.uno {
+	display: flex;
+	flex-direction: column;
 	padding: 50px;
 	border: 1px solid;
 	box-shadow: 0px 0px 12px black;
 	border-radius: 16px;
 	width: 80%;
-	
-	
 }
 
-section .img-box img{
-
-	width: 600px;
-	height: 600px;
-	margin: 50px;
-	
+.img-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
 }
 
-section .dos{
-	
+.img > img {
+	width: 340px;
+	height: 350px;
+	padding-bottom: 20px;	
+}
+
+.img {
 	display: flex;
 	flex-direction: column;
-	
-}
-
-section .dos .tres{
-	
-	display: flex;
+	justify-content: center;
 	align-items: center;
-	text-align: center;
-	
-	margin: 15px;
-	padding: 20px;
-	background-color: whitesmoke;
-	border-radius: 16px;
-	width: 300px;
-
-	
 }
 
-section .dos .tres h2{
+.tres > h3 {
 	
-	font-size: 25px;
-	
-	
+	padding-top: 10px;
 }
+
 section .backToIndex .link{
 	
 	color: inherit;
@@ -79,21 +65,23 @@ section .backToIndex .link{
 	
 }
 	
+.backToIndex {
+	padding-top: 10px;
+}	
 	
-section .backToIndex{
-	
-	background-color: rgb(255, 128, 128);
-		border: 1px solid #ddd;
-		border-radius: 5px;
-		padding: 10px;
-		text-align: center;
-		font-size: 1em;
-		cursor: pointer;
-		transition: background-color 0.3s;
-
+.backToIndex > button {
+	background-color: red;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	font-size: 1em;
+	cursor: pointer;
+	font-weight: bold;
+	color: white;
+	transition: background-color 0.3s;
 }
 
-section .backToIndex:hover{
+.backToIndex > button:hover{
 	
 	background-color: rgb(0, 136, 255);
 	

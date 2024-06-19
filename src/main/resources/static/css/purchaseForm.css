@@ -1,3 +1,7 @@
+/* Importamos URL */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/*----------------------------------------------------------------*/
+
 *{
 	
 	box-sizing: border-box;
@@ -20,8 +24,8 @@
 
 .sectionPurchase .img-box img{
 	
-	width: 600px;
-	height: 600px;
+	width: 500px;
+	height: 400px;
 	margin: 50px;
 	
 }
@@ -89,7 +93,8 @@
 .sectionPurchase .button-purchase .buyNew .collapse .card-body form .submit{
 	
 	text-decoration: none;
-	background-color: rgb(0, 136, 255);
+	background-color: blue;
+	color: white;
 	border: 1px solid;
 	border-radius: 16px;
 	padding: 2px;
@@ -110,7 +115,9 @@
 
 .sectionPurchase .button-purchase .button-new{
 	
-	background-color: rgb(255, 128, 128);
+	background-color: green;
+	color: white;
+	font-weight: bold;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	padding: 10px;
@@ -123,7 +130,7 @@
 }
 
 .sectionPurchase .button-purchase .button-new:hover {
-    background-color: rgb(0, 136, 255);
+    background-color: red;
 }
 
 .sectionPurchase .button-purchase .button-used{
@@ -150,5 +157,20 @@
 	color: blue;
 	cursor: pointer;
 	
+}
+
+.stock > h4 {
+		font-weight: bold;
+}
+
+.stock {
+	display: flex;
+	align-items: center;
+	padding-top: 30px;
+}
+
+.button-purchase {
+	display: flex;
+	flex-direction: row;
 }
 

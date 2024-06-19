@@ -116,7 +116,7 @@ public class ProductService implements IProductService
 	//Agregamos un producto:
 	@Override
 	public Product insert(Product product) throws Exception
-	{																///////////////A PARTIR DE ACA SE ROMPE
+	{																
 		if( productRepository.findByCode(product.getCode()) != null) 
 		{
 			throw new Exception("ERROR the product already exists");
@@ -130,8 +130,12 @@ public class ProductService implements IProductService
 	
 	//Modificamos un producto:
 	@Override
-	public Product update(Product product) 
+	public Product update(Product product) throws Exception 
 	{
+		if( productRepository.findByCode(product.getCode()) != null) 
+		{
+			throw new Exception("ERROR the product already exists");
+		}
 		return productRepository.save(product);
 	}
 	

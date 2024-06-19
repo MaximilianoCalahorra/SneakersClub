@@ -54,7 +54,7 @@ public interface IProductService
 	///Modificar:
 	
 	//Modificamos un producto:
-	public Product update(Product product);
+	public Product update(Product product) throws Exception;
 	
 	///Eliminar:
 	

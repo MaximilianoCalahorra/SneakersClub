@@ -1,10 +1,8 @@
 package com.unla.grupo7.controllers;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.unla.grupo7.entities.User;
 import com.unla.grupo7.helpers.ViewRouteHelper;
 
 
@@ -31,8 +29,6 @@ public class UserController {
 	
 	@GetMapping("/loginsuccess")
 	public String loginCheck() {
-		//User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		//user.getUserRoles()
 		return "redirect:/index";
 	}
 }

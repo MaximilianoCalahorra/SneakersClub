@@ -81,7 +81,7 @@ public class PurchaseController
 	public ModelAndView purchases() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PURCHASES);
 		
-		List<Purchase> listaPurchases = purchaseService.getAllInOrderByPurchasePrice();
+		List<Purchase> listaPurchases = purchaseService.getAllInOrderByPurchaseDateTime();
 		
 		modelAndView.addObject("listaPurchases", listaPurchases);
 		

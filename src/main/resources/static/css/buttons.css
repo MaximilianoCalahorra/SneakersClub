@@ -1,0 +1,19 @@
+.buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.buttons > button {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: red;
+	color: black;
+	font-weight: bold;
+	margin-left: 8px;
+}
+
+.buttons > h3 {
+	padding-left: 10px;
+	text-decoration: underline;
+}

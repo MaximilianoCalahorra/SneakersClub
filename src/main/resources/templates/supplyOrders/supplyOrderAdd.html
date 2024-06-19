@@ -15,7 +15,7 @@
 	<body>
 		<div th:include="navBar/navBarAdmin.html::div-header"></div>
 		<section class="formProductSection">
-				<h1>Create a new Supply Order</h1>
+				<h1>CREATE A NEW SUPPLY ORDER:</h1>
 				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrders/supplyOrders}" method="post">
 					
 					<input type="hidden" th:field="*{product.productId}" required/>

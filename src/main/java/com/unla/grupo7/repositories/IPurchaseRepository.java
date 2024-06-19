@@ -84,4 +84,8 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 	//Traemos todas las compras ordenadas de manera descendente por precio:
 	@Query("SELECT p FROM Purchase p ORDER BY p.purchasePrice DESC")
 	public abstract List<Purchase> getAllInOrderByPurchasePrice();
+	
+	//Traemos todas las compras ordenadas de manera descendente por fecha y hora:
+	@Query("SELECT p FROM Purchase p ORDER BY p.dateTime DESC")
+	public abstract List<Purchase> getAllInOrderByPurchaseDateTime();
 }

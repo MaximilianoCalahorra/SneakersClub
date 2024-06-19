@@ -44,6 +44,8 @@ public interface ISupplyOrderRepository extends JpaRepository<SupplyOrder, Seria
 	public abstract List<SupplyOrder> findByAmountRange(@Param("minimumAmount")int minimumAmount, @Param("maximumAmount")int maximumAmount);
 
 	//Encontramos los pedidos de aprovisionamiento con determinado estado:
-	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.state = (:state)")
+	@Query("SELECT so FROM SupplyOrder so INNER JOIN FETCH so.product WHERE so.state = (:state) ORDER BY so.supplier ASC")
 	public abstract List<SupplyOrder> findByState(@Param("state")String state);
+	
+	
 }

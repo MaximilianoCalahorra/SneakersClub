@@ -34,6 +34,11 @@ public class LotService implements ILotService{
 		
 		return lot;
 	}
+	
+	@Override
+	public List<Lot> getAllLotsInOrderByReceptionDate() {
+		return lotRepository.getAllLotsInOrderByReceptionDate();
+	}
 
 	@Override
 	public List<Lot> findByReceptionDate(LocalDateTime receptionDate) {
@@ -146,6 +151,9 @@ public class LotService implements ILotService{
 			return false;
 		}
 	}
+
+
+	
 
 
 

@@ -18,21 +18,21 @@
 				<h1>Create a new Supply Order</h1>
 				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrders/supplyOrders}" method="post">
 					
-					<input type="hidden" th:field="*{product.productId}"/>
-					<input type="hidden" th:field="*{product.code}"/>
-					<input type="hidden" th:field="*{product.brand}"/>
-					<input type="hidden" th:field="*{product.name}"/>
-					<input type="hidden" th:field="*{product.description}"/>
-					<input type="hidden" th:field="*{product.cost}"/>
-					<input type="hidden" th:field="*{product.salePrice}"/>
-					<input type="hidden" th:field="*{product.enabled}"/>
+					<input type="hidden" th:field="*{product.productId}" required/>
+					<input type="hidden" th:field="*{product.code}" required/>
+					<input type="hidden" th:field="*{product.brand}" required/>
+					<input type="hidden" th:field="*{product.name}" required/>
+					<input type="hidden" th:field="*{product.description}" required/>
+					<input type="hidden" th:field="*{product.cost}" required/>
+					<input type="hidden" th:field="*{product.salePrice}" required/>
+					<input type="hidden" th:field="*{product.enabled}" required/>
 					
 					<p>State: <select th:field="*{supplier}" required> 
 						<option value="NikeSupplier">NikeSupplier</option> 
 						<option value="JordanSupplier">JordanSupplier</option>
 						<option value="AdidasSupplier">AdidasSupplier</option>
 					</select></p>
-					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1"/></p>
+					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1" required/></p>
 					<p>State: <select th:field="*{state}" required> 
 						<option value="In process" selected>In process</option> 
 					</select></p>

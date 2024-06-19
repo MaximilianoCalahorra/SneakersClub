@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.unla.grupo7.entities.Lot;
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.Purchase;
 import com.unla.grupo7.entities.Stock;
@@ -89,7 +88,4 @@ public class PurchaseController
 		
 		return modelAndView;
 	}
-	
-	
-	
 }

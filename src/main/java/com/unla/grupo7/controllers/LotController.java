@@ -21,7 +21,6 @@ import com.unla.grupo7.services.ISupplyOrderService;
 @RequestMapping("/lot")
 public class LotController {
 	
-	//1- 
 	private ILotService lotService;
 	private ISupplyOrderService supplyOrderService; 
 	private IStockService stockService;
@@ -68,7 +67,6 @@ public class LotController {
 			
 			
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

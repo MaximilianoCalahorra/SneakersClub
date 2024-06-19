@@ -80,7 +80,7 @@ public class ProductController {
 	@GetMapping("/ourShoes")
 	public ModelAndView ourShoes() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.OURSHOES);
-		List <Product> listaProducts = productService.getAll();
+		List <Product> listaProducts = productService.findByEnabled(true); //Devolvemos solo los productos habilitados.
 		modelAndView.addObject("listaProducts", listaProducts);
 		return modelAndView;
 	}

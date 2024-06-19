@@ -1,5 +1,7 @@
 package com.unla.grupo7.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.unla.grupo7.entities.Lot;
 import com.unla.grupo7.entities.Product;
 import com.unla.grupo7.entities.Purchase;
 import com.unla.grupo7.entities.Stock;
@@ -74,4 +77,20 @@ public class PurchaseController
 		}
 		return modelAndView;
 	}
+	
+	
+	@GetMapping("/purchases")
+	public ModelAndView purchases() {
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PURCHASES);
+		
+		List<Purchase> listaPurchases = purchaseService.getAllInOrderByPurchasePrice();
+		
+		modelAndView.addObject("listaPurchases", listaPurchases);
+		
+		
+		return modelAndView;
+	}
+	
+	
+	
 }

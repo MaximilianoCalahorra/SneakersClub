@@ -80,4 +80,8 @@ public interface IPurchaseRepository extends JpaRepository<Purchase, Serializabl
 		   + "(:untilDateTime)")
 	public abstract List<Purchase> findByDateTimeRange(@Param("fromDateTime")LocalDateTime fromDateTime, 
 													   @Param("untilDateTime")LocalDateTime untilDateTime);
+	
+	//Traemos todas las compras ordenadas de manera descendente por precio:
+	@Query("SELECT p FROM Purchase p ORDER BY p.purchasePrice DESC")
+	public abstract List<Purchase> getAllInOrderByPurchasePrice();
 }

@@ -59,6 +59,9 @@ public interface IPurchaseService
 	//Obtenemos todas las compras:
 	public List<Purchase> getAll();
 	
+	//Traemos todas las compras ordenadas de manera descendente por precio:
+	public abstract List<Purchase> getAllInOrderByPurchasePrice();
+	
 	///Agregar:
 	
 	//Agregamos una compra:

@@ -1,0 +1,37 @@
+/* Importamos URL */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/*----------------------------------------------------------------*/
+
+/* Estilos generales */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+}
+/*----------------------------------------------------------------*/
+
+/* Body */
+body{
+    background-color: lightgrey;
+}
+/*----------------------------------------------------------------*/
+
+main {
+	padding: 50px;
+	display: flex;
+	flex-direction: row;
+}
+
+.aboutUsInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.aboutUsInfo > h1 {
+	text-decoration: underline;
+}
+
+.img > img {
+	padding-left: 10px;
+}

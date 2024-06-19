@@ -15,6 +15,9 @@ public class ViewRouteHelper {
 	//STORES
 	public final static String STORES = "stores/stores";
 	
+	//ABOUT US
+	public final static String ABOUT_US = "aboutUs/aboutUs";
+	
 	//PRODUCTS
 	public final static String PRODUCT_ADD = "products/productAdd";
 	public final static String PRODUCT_SAVE = "products/productSave";

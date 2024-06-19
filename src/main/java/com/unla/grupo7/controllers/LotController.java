@@ -37,8 +37,6 @@ public class LotController {
 	@GetMapping("/registerLot/{supplyOrderId}")
 	public RedirectView registerLot(@PathVariable int supplyOrderId) {
 		
-		String message = "";
-		
 		if (lotService.findBySupplyOrder(supplyOrderId) == null) {
 			
 			try {
@@ -70,14 +68,9 @@ public class LotController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else {
-			
-			message = "ERROR the lot already exists";
 		}
 		
 		RedirectView redirectView = new RedirectView (ViewRouteHelper.ROUTE);
-		redirectView.addStaticAttribute("message", message);
-		
 		return redirectView;
 	}
 	

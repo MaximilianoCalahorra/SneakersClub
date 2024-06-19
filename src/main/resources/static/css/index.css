@@ -1,17 +1,23 @@
+/* Importamos URL */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/*----------------------------------------------------------------*/
+
+/* Estilos generales */
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Oswald", sans-serif;
- 	
 }
+/*----------------------------------------------------------------*/
 
+/* Body */
 body{
     background-color: lightgrey;
 }
+/*----------------------------------------------------------------*/
 
-
+/* Section intro */
 .intro {
 	background-image: url('/assets/img/jordan4.webp');
 	background-size: cover;
@@ -37,59 +43,151 @@ body{
 .intro-title > a:hover {
 	color: black;
 }
+/*----------------------------------------------------------------*/
 
-/* -------------------------------------------- */
-
-    /* carrusel */
-
-#carouselExampleAutoplaying {
-	padding: 40px;
+/* -Carrusel de Zapas */
+.slider {
+	height: auto;
+	margin: auto;
+	overflow: hidden;
+	background-color: white;
+}
+.slider .slide-track {
+	display: flex;
+	animation: scroll 40s linear infinite;
+	-webkit-animation: scroll 40s linear infinite;
+	width: calc(200px * 14);
+}
+.slider .slide {
+	width: 300px;
+	height: 200px;
 }
 
-.carousel-inner img{
-    height: 650px;
+.slider .slide img {
+	width: 200px;
+	height: 150px;	
 }
 
-
-/* -------------------------------------------- */
-
-    /* slider */
-	.slider {
-	    width: 75vw;
-	    height: auto;
-	    margin: auto;
-	    overflow: hidden;
-	
+@keyframes scroll {
+	0% {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+	100% {
+	-webkit-transform: translateX(calc(-200px * 7));
+	transform: translateX(calc(-200px * 7));
 	}
-
-	.slider .slide-track {
-	    display: flex;
-	    animation: scroll 40s linear infinite;
-	    -webkit-animation: scroll 40s linear infinite;
-	    width: calc(200px * 14);
-	}
-
-	.slider .slide {
-	    width: 200px;
-	
-	}
-
-	.slider .slide img {
-	    width: 100px;
-		
-	}
-
-	@keyframes scroll {
-	    0% {
-	        -webkit-transform: translateX(0);
-	        transform: translateX(0);
-	    }
-	    100% {
-	        -webkit-transform: translateX(calc(-200px * 7));
-	        transform: translateX(calc(-200px * 7));
-	    }
-	}
+}
 /* -------------------------------------- */
+
+/* Section Brands */
+.section-brands {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-intro {
+	
+	padding: 50px;
+}
+
+.section-intro > button {
+	padding: 20px;
+	border-radius: 20px;
+	background-color: black;
+}
+
+.section-intro > button  > a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+.section-intro > button  > a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: large;
+}
+
+.brands {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+.brandCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.brandCard > a > img {
+	height: 350px;
+	width: 340px;
+	padding: 30px;
+}
+
+.brandCard > a > img:hover {
+	transform: scale(1.1);
+}
+/* -------------------------------------- */
+
+/*Final Section*/
+.finalSection {
+	padding: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.storesSection {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.storesSection > a {
+	color: black;
+}
+
+.storesSection > img {
+	height: 400px;
+	width: 650px;
+}
+
+.historySection > a {
+	color: black;
+}
+
+.historySection {
+	padding: 20px;
+}
+
+.historySection > img {
+	height: 400px;
+	width: 650px;
+}
+
+/* -------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .gallery-title {
 	background-color: black;
@@ -348,10 +446,16 @@ td, th {
     text-align: center;
 }
 
+thead {
+	background-color: cadetblue;
+}
+
+@media (max-width: 1200px) {
+	.btn {
+		margin-top: 10px;
+	}
+}
 /* ***************** */
-
-
-
 .superContainer{
 	
 	text-align: center;

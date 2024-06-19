@@ -32,7 +32,11 @@
 					<input type="hidden" th:field="*{product.salePrice}"/>
 					<input type="hidden" th:field="*{product.enabled}"/>
 					
-					<p>Supplier: <input type="text" th:field="*{supplier}"/></p>
+					<p>State: <select th:field="*{supplier}" required> 
+						<option value="NikeSupplier">NikeSupplier</option> 
+						<option value="JordanSupplier">JordanSupplier</option>
+						<option value="AdidasSupplier">AdidasSupplier</option>
+					</select></p>
 					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1"/></p>
 					
 					<p>State: <select th:field="*{state}" required> 

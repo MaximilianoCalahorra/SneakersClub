@@ -49,7 +49,6 @@ public class SupplyOrderController {
 			modelAndView.addObject("supplyOrder", supplyOrder);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	

@@ -69,12 +69,7 @@ public class ProductController {
 			this.product = product;
 			
 		}
-		
-		
-		
-		
 	}
-	
 	
 	//1- CUANDO SE PETICIONA /ourShoes ENVIAMOS LA VISTA PRINCIPAL --> products/ourShoes/
 	@GetMapping("/ourShoes")
@@ -101,9 +96,9 @@ public class ProductController {
 	//3- GUARDAMOS EL PRODUCTO EN LA BD
 	@PostMapping("/productSave") 
 	public ModelAndView create(@ModelAttribute ("productFormWrapper") ProductFormWrapper wrapper) {
+		
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_SAVE);
 		
-
 		try 
 		{
 			//INSERTAMOS NUESTRO PRODUCTO EN LA BD
@@ -148,25 +143,17 @@ public class ProductController {
 	
 	//5- REMOVER EL PRODUCTO (BAJA LOGICA)
 	@GetMapping("/remove/{productId}")
-	public ModelAndView remove(@PathVariable int productId) throws Exception {
-		
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_REMOVE);
-		
-		Product product = productService.findByProductId(productId);
+	public RedirectView remove(@PathVariable int productId) throws Exception {
 		
 		productService.removeLogical(productId);
 		
-		modelAndView.addObject("product", product);
-		
-		return modelAndView;
+		return new RedirectView(ViewRouteHelper.ROUTE);
 		
 	}
 	
 	//6- GUARDAMOS LOS DATOS EDITADOS PROVENIENDO DEL PRODUCTFORMWRAPPER
 	@PostMapping("/productUpdate") 
 	public RedirectView update(@ModelAttribute ("productFormWrapper") ProductFormWrapper wrapper) {
-
-		
 
 		try 
 		{
@@ -186,9 +173,6 @@ public class ProductController {
 		{
 			e.getMessage();
 		}
-		
-		
-		
 		
 		return new RedirectView(ViewRouteHelper.ROUTE);
 	}

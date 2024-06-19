@@ -16,7 +16,7 @@
 			<div th:include="navBar/navBarAdmin.html::div-header"></div>
 			
 			<div class="tableTitle"> 
-				<h3>Supply Orders in state "In process"</h3>	
+				<h3>Supply Orders waiting to be delivered...</h3>	
 			</div>
 				
 			<section class="tableSection">
@@ -25,7 +25,7 @@
 						 <tr>
 							<th>ID</th>
 						    <th>Product Code</th>
-						    <th>Supplier</th>
+						    <th class = "red">Supplier</th>
 						    <th>Amount</th>
 							<th>State</th>
 							<th>Actions</th>
@@ -47,7 +47,7 @@
 			</section>
 			
 			<div class="tableTitle"> 
-				<h3>Supply Orders in state "Delivered"</h3>	
+				<h3>Lots ready to be created</h3>	
 			</div>
 			
 			<section class="tableSection">
@@ -56,7 +56,7 @@
 						<tr>							
 							<th>ID</th>
 							<th>Product Code</th>
-							<th>Supplier</th>
+							<th class = "red">Supplier</th>
 							<th>Amount</th>
 							<th>State</th>
 							<th>Actions</th>

@@ -1,5 +1,7 @@
 package com.unla.grupo7.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,7 +59,7 @@ public class PurchaseController
 		
 		try 
 		{
-			
+
 			stockService.availableStock(productId, amount); //Verificamos que el stock sea suficiente. En caso de que no levanta la excepción.
 			Product product = productService.findByProductId(productId); //Obtenemos el producto a comprar.
 			double purchasePrice = product.getSalePrice() * amount; //Calculamos el total de la compra.
@@ -74,4 +76,20 @@ public class PurchaseController
 		}
 		return modelAndView;
 	}
+	
+	
+	@GetMapping("/purchases")
+	public ModelAndView purchases() {
+		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PURCHASES);
+		
+		List<Purchase> listaPurchases = purchaseService.getAllInOrderByPurchasePrice();
+		
+		modelAndView.addObject("listaPurchases", listaPurchases);
+		
+		
+		return modelAndView;
+	}
+	
+	
+	
 }

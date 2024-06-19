@@ -109,6 +109,11 @@ public class PurchaseService implements IPurchaseService {
 	public Purchase insert(Purchase purchase) {
 		return  purchaseRepository.save(purchase);
 	}
+
+	@Override
+	public List<Purchase> getAllInOrderByPurchasePrice() {
+		return purchaseRepository.getAllInOrderByPurchasePrice();
+	}
 	
 	
 

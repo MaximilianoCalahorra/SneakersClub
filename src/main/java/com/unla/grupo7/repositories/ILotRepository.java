@@ -20,6 +20,10 @@ public interface ILotRepository extends JpaRepository<Lot, Serializable>
 	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.lotId = (:lotId)")
 	public abstract Lot findByLotId(@Param("lotId") int lotId);
 	
+	//Traemos todos los lotes ordenados por fecha de forma descendente:
+	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock INNER JOIN l.supplyOrder ORDER BY l.receptionDate DESC")
+	public abstract List<Lot> getAllLotsInOrderByReceptionDate();
+	
 	//Encontramos los lotes con determinada fecha de recepción:
 	@Query("SELECT l FROM Lot l INNER JOIN FETCH l.stock WHERE l.receptionDate = (:receptionDate)")
 	public abstract List<Lot> findByReceptionDate(@Param("receptionDate")LocalDateTime receptionDate);

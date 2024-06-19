@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -22,7 +21,7 @@ main .title{
 	align-items: center;
 	justify-content: center;
 	margin: 50px;
-	background-color: whitesmoke;
+	background-color: black;
 	border-radius: 16px;
 	padding: 16px;
 	
@@ -30,7 +29,7 @@ main .title{
 }
 
 main .title h1{
-	
+	color: white;
 	font-size: 35px;
 	
 }

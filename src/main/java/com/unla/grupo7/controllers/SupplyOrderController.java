@@ -41,29 +41,24 @@ public class SupplyOrderController {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.SUPPLY_ORDER_ADD);
 		SupplyOrder supplyOrder = new SupplyOrder();
 		
-		
 		try {
 			
 			Product p = productService.findByProductId(productId);
 			
 			supplyOrder.setProduct(p);
-			
 			modelAndView.addObject("supplyOrder", supplyOrder);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
-			
 		return modelAndView;
 	}
 	
 	///2- GUARDAR EN LA BD
 	@PostMapping("/supplyOrders") 
-	public RedirectView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder )  ///recibe el codigo y lo busca el producto
-	{
-
+	public RedirectView create(@ModelAttribute("supplyOrder") SupplyOrder supplyOrder ) { ///recibe el codigo y lo busca el producto
+		
 		try {	
 			
 			supplyOrderService.insert(supplyOrder);
@@ -71,10 +66,8 @@ public class SupplyOrderController {
 		} catch(Exception e){
 			
 			System.out.println(e.getMessage());
-			
 		}
 		
-		//modelAndView.addObject("supplyOrder", supplyOrder);
 		return new RedirectView (ViewRouteHelper.REDIRECT_SUPPLY_ORDERS);
 	}
 	
@@ -91,11 +84,10 @@ public class SupplyOrderController {
 			if (lotService.findBySupplyOrder(supplyOrder.getSupplyOrderId()) == null) {
 				
 			
-				listaAux.add(supplyOrder);
-				
+				listaAux.add(supplyOrder);	
 			}
-			
 		}
+		
 		modelAndView.addObject("listaSupplyOrdersInProcess", listaSupplyOrdersInProcess);
 		modelAndView.addObject("listaSupplyOrdersDelivered", listaAux);
 		return modelAndView;

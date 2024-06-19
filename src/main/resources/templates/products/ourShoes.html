@@ -19,8 +19,8 @@
 		<div class="container">
 		         <div class="card__container">
 		            <article th:each="product : ${listaProducts}" class="card__article">
-						<h1 th:text="${product.name}" class="card__title"></h1>
-		               <img th:src="@{'/assets/img/' + ${product.productId} + '.jpg'}" alt="image" class="card__img">
+						<h1 th:text="${product.description}" class="card__title"></h1>
+		               <img th:src="@{'/assets/img/' + ${product.productId} + '.png'}" alt="image" class="card__img">
 
 		               <div class="card__data">
 		                  <span th:text="${product.brand}" class="card__description"></span>
@@ -30,11 +30,8 @@
 		            </article>
 		         </div>
 		</div>
-
-		
 		<div th:include="footer/footer.html::footer"></div>
-			
-		    <!-- ----------------------------------------------------------------------- -->
+		<!---->
 			
 			
     </body>

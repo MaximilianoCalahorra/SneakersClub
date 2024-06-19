@@ -2,7 +2,6 @@ package com.unla.grupo7.services;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import com.unla.grupo7.entities.Purchase;
 
@@ -59,6 +58,9 @@ public interface IPurchaseService
 	
 	//Obtenemos todas las compras:
 	public List<Purchase> getAll();
+	
+	//Traemos todas las compras ordenadas de manera descendente por precio:
+	public abstract List<Purchase> getAllInOrderByPurchasePrice();
 	
 	///Agregar:
 	

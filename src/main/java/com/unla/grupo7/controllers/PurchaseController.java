@@ -59,6 +59,7 @@ public class PurchaseController
 		
 		try 
 		{
+
 			stockService.availableStock(productId, amount); //Verificamos que el stock sea suficiente. En caso de que no levanta la excepción.
 			Product product = productService.findByProductId(productId); //Obtenemos el producto a comprar.
 			double purchasePrice = product.getSalePrice() * amount; //Calculamos el total de la compra.

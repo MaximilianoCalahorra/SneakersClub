@@ -34,6 +34,7 @@ public class ProductService implements IProductService
 	public Product findByCode(String code) throws Exception
 	{
 		Product product = productRepository.findByCode(code);
+		
 		if(product == null) 
 		{
 			throw new Exception("Error! There isn't exists a Product with code: #" + code);
@@ -115,11 +116,13 @@ public class ProductService implements IProductService
 	//Agregamos un producto:
 	@Override
 	public Product insert(Product product) throws Exception
-	{
-		if(productRepository.findByCode(product.getCode()) != null) 
+	{																///////////////A PARTIR DE ACA SE ROMPE
+		if( productRepository.findByCode(product.getCode()) != null) 
 		{
-			throw new Exception("ERROR the product is existent");
+			throw new Exception("ERROR the product already exists");
 		}
+		
+	
 		return productRepository.save(product);
 	}
 	

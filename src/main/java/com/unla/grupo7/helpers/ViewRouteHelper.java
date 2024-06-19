@@ -18,7 +18,6 @@ public class ViewRouteHelper {
 	//PRODUCTS
 	public final static String PRODUCT_ADD = "products/productAdd";
 	public final static String PRODUCT_SAVE = "products/productSave";
-	public final static String PRODUCTS = "products/products";
 	public final static String PRODUCT_REMOVE = "products/productRemove";
 	public final static String PRODUCT_EDIT = "products/productEdit";
 	public final static String OURSHOES = "products/ourShoes";
@@ -33,11 +32,18 @@ public class ViewRouteHelper {
 	//PURCHASES
 	public final static String PURCHASE_FORM = "purchases/purchaseForm";
 	public final static String POSTPURCHASE = "purchases/postPurchase";
+	public final static String PURCHASES = "purchases/purchases";
+	
+	//LOTS
+	public final static String LOTS = "lot/lots";
 	
 	//RUTAS DE DIRECCIONAMIENTO
 	public final static String ROUTE = "/index";
-
 	public final static String REDIRECT_SUPPLY_ORDERS = "/supplyOrders/supplyOrders";
+	
+	
+	
+
 
 
 }

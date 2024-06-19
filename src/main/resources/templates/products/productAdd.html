@@ -23,12 +23,12 @@
 					<p>Brand: <input type="text" th:field="*{product.brand}" placeholder="Brand"/></p>
 					<p>Name: <input type="text" th:field="*{product.name}" placeholder="Name"/></p>
 					<p>Description: <input type="text" th:field="*{product.description}" placeholder="Description"/></p>
-					<p>Cost: <input type="number" th:field="*{product.cost}" placeholder="Cost"/></p>
-					<p>Sale Price: <input type="number" th:field="*{product.salePrice}" placeholder="Sale Price"/></p>
+					<p>Cost: <input type="number" th:field="*{product.cost}" placeholder="Cost" min="1"/></p>
+					<p>Sale Price: <input type="number" th:field="*{product.salePrice}" placeholder="Sale Price" min="1"/></p>
 					<p>Enabled: True <input type="radio" th:field="*{product.enabled}" value="true"/>
 					False <input type="radio" th:field="*{product.enabled}" value="false"/></p>
-					<p>Desirable Amount: <input type="number" th:field="*{desirableAmount}" placeholder="Desirable Amount"/>
-					<p>Minimum Amount: <input type="number" th:field="*{minimumAmount}" placeholder="Minimum Amount"></p>
+					<p>Desirable Amount: <input type="number" th:field="*{desirableAmount}" placeholder="Desirable Amount" min="1"/>
+					<p>Minimum Amount: <input type="number" th:field="*{minimumAmount}" placeholder="Minimum Amount" min="1"></p>
 					<input type="submit" value="Add Product" class="btnSubmit"/>
 				</form>					
 		</section>

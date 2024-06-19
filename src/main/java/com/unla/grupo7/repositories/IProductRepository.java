@@ -19,6 +19,7 @@ public interface IProductRepository extends JpaRepository<Product, Serializable>
 	public abstract Product findByProductId(int productId);
 	
 	//Encontramos el producto con determinado código:
+	@Query("SELECT p FROM Product p WHERE p.code = (:code)")
 	public abstract Product findByCode(String code); 
 	
 	//Encontramos el producto con determinado nombre:

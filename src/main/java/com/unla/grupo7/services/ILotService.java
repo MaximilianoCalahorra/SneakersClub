@@ -11,6 +11,9 @@ public interface ILotService
 	   
 	//Encontramos el lote con determinado id o lanzamos una excepción por lote inexistente:
 	public Lot findByLotId(int lotId) throws Exception;
+	
+	//Traemos todos los lotes ordenados por fecha de forma descendente:
+	public abstract List<Lot> getAllLotsInOrderByReceptionDate();
 		
 	//Encontramos los lotes con determinada fecha de recepción:
 	public List<Lot> findByReceptionDate(LocalDateTime receptionDate);

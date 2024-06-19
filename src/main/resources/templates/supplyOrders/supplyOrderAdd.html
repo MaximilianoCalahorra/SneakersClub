@@ -12,8 +12,8 @@
 		<link href="/css/products.css" rel="stylesheet" />
 		<link href="/css/navBar.css" rel="stylesheet" />
     </head>
-	<body>		
-		<div th:include="navBar/navBarAdmin.html::div-header"></div>	
+	<body>
+		<div th:include="navBar/navBarAdmin.html::div-header"></div>
 		<section class="formProductSection">
 				<h1>Create a new Supply Order</h1>
 				<form th:object="${supplyOrder}" action="#" th:action="@{/supplyOrders/supplyOrders}" method="post">
@@ -27,13 +27,17 @@
 					<input type="hidden" th:field="*{product.salePrice}"/>
 					<input type="hidden" th:field="*{product.enabled}"/>
 					
-					<p>Supplier: <input type="text" th:field="*{supplier}"/></p>
+					<p>State: <select th:field="*{supplier}" required> 
+						<option value="NikeSupplier">NikeSupplier</option> 
+						<option value="JordanSupplier">JordanSupplier</option>
+						<option value="AdidasSupplier">AdidasSupplier</option>
+					</select></p>
 					<p>Amount to buy: <input type="number" th:field="*{amount}" min="1"/></p>
 					<p>State: <select th:field="*{state}" required> 
 						<option value="In process" selected>In process</option> 
 					</select></p>
 					<input type="submit" value="Generate Supply Order" class="btnSubmit"/>
 				</form>	
-		</section> 
+		</section>
 	</body>	
 </html>

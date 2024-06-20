@@ -117,7 +117,6 @@ public class PurchaseService implements IPurchaseService {
 
 	@Override
 	public List<Purchase> getAllInOrderByPurchaseDateTime() {
-		// TODO Auto-generated method stub
 		return purchaseRepository.getAllInOrderByPurchaseDateTime();
 	}
 	

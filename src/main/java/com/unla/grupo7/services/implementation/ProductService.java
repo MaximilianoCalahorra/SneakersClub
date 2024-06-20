@@ -132,14 +132,16 @@ public class ProductService implements IProductService
 	@Override
 	public Product update(Product product) throws Exception {
 		
-		Product productYaExistente = productRepository.findByCode(product.getCode());
+		Product productYaExistente = productRepository.findByCode(product.getCode()); //Buscamos si ya existe un producto con ese código.
 
+		//En caso de que exista un producto con ese código y el id del producto que se quiere editar sea distinto al de uno que ya existe:
 		if( productRepository.findByCode(product.getCode()) != null && productYaExistente.getProductId() != product.getProductId()) 
 		{
-			throw new Exception("ERROR the product already exists");
+			throw new Exception("ERROR the product already exists"); //Lanzamos una excepción de que ese código ya lo tiene otro producto.
 		}
-		
-		return productRepository.save(product);
+		//Es decir, con el if validamos que sólo se pueda modificar un producto mientras no se le asigne un código que ya tiene otro y que
+		//se pueda modificar otros datos del producto manteniendo el código.
+		return productRepository.save(product); //En el caso contrario, actualizamos el producto en la base de datos.
 	}
 	
 	///Eliminar:

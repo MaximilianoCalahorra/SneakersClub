@@ -132,6 +132,16 @@ public class ProductController {
 		return modelAndView;
 	}
 	
+	//6- REMOVER EL PRODUCTO (BAJA LOGICA)
+		@GetMapping("/remove/{productId}")
+		public RedirectView remove(@PathVariable int productId) throws Exception {
+			
+			productService.removeLogical(productId);
+			
+			return new RedirectView(ViewRouteHelper.ROUTE);
+			
+		}
+	
 	
 	//5- GUARDAMOS LOS DATOS EDITADOS PROVENIENDO DEL PRODUCTFORMWRAPPER
 	@PostMapping("/productUpdate") 
@@ -158,15 +168,4 @@ public class ProductController {
 			
 		return new RedirectView(ViewRouteHelper.ROUTE);
 	}
-	
-	//6- REMOVER EL PRODUCTO (BAJA LOGICA)
-	@GetMapping("/remove/{productId}")
-	public RedirectView remove(@PathVariable int productId) throws Exception {
-		
-		productService.removeLogical(productId);
-		
-		return new RedirectView(ViewRouteHelper.ROUTE);
-		
-	}
-	
 }

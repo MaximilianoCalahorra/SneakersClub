@@ -130,12 +130,15 @@ public class ProductService implements IProductService
 	
 	//Modificamos un producto:
 	@Override
-	public Product update(Product product) throws Exception 
-	{
-		if( productRepository.findByCode(product.getCode()) != null) 
+	public Product update(Product product) throws Exception {
+		
+		Product productYaExistente = productRepository.findByCode(product.getCode());
+
+		if( productRepository.findByCode(product.getCode()) != null && productYaExistente.getProductId() != product.getProductId()) 
 		{
 			throw new Exception("ERROR the product already exists");
 		}
+		
 		return productRepository.save(product);
 	}
 	
@@ -149,7 +152,7 @@ public class ProductService implements IProductService
 		{
 			Product product = findByProductId(productId);
 			product.setEnabled(false);
-			update(product);
+			productRepository.save(product);
 			return true;
 		} 
 		catch(Exception e)

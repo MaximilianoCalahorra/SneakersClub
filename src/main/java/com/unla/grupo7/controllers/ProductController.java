@@ -39,8 +39,6 @@ public class ProductController {
 		private int desirableAmount = 0;
 		private int minimumAmount = 0;
 		
-
-
 		//GETTERS
 		public Product getProduct() {
 			return product;
@@ -95,9 +93,7 @@ public class ProductController {
 	
 	//3- GUARDAMOS EL PRODUCTO EN LA BD
 	@PostMapping("/productSave") 
-	public ModelAndView create(@ModelAttribute ("productFormWrapper") ProductFormWrapper wrapper) {
-		
-		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.PRODUCT_SAVE);
+	public RedirectView create(@ModelAttribute ("productFormWrapper") ProductFormWrapper wrapper) {
 		
 		try 
 		{
@@ -113,11 +109,7 @@ public class ProductController {
 			e.getMessage();
 		}
 		
-		//PASAMOS LOS OBJETOS A LA VISTA.
-		modelAndView.addObject("product", wrapper.getProduct());
-		modelAndView.addObject("desirableAmount", wrapper.getDesirableAmount());
-		modelAndView.addObject("minimumAmount", wrapper.getMinimumAmount());
-		return modelAndView;
+		return new RedirectView(ViewRouteHelper.ROUTE);
 	}
 	
 	//4- EDITAMOS EL PRODUCTO
@@ -140,18 +132,18 @@ public class ProductController {
 		return modelAndView;
 	}
 	
+	//6- REMOVER EL PRODUCTO (BAJA LOGICA)
+		@GetMapping("/remove/{productId}")
+		public RedirectView remove(@PathVariable int productId) throws Exception {
+			
+			productService.removeLogical(productId);
+			
+			return new RedirectView(ViewRouteHelper.ROUTE);
+			
+		}
 	
-	//5- REMOVER EL PRODUCTO (BAJA LOGICA)
-	@GetMapping("/remove/{productId}")
-	public RedirectView remove(@PathVariable int productId) throws Exception {
-		
-		productService.removeLogical(productId);
-		
-		return new RedirectView(ViewRouteHelper.ROUTE);
-		
-	}
 	
-	//6- GUARDAMOS LOS DATOS EDITADOS PROVENIENDO DEL PRODUCTFORMWRAPPER
+	//5- GUARDAMOS LOS DATOS EDITADOS PROVENIENDO DEL PRODUCTFORMWRAPPER
 	@PostMapping("/productUpdate") 
 	public RedirectView update(@ModelAttribute ("productFormWrapper") ProductFormWrapper wrapper) {
 
@@ -159,22 +151,21 @@ public class ProductController {
 		{
 			//INSERTAMOS NUESTROS NUEVOS DATOS EN LA BD
 			productService.update(wrapper.getProduct());
-			
+				
 			//INICIALIZAMOS EL STOCK			
 			Stock stock = stockService.findByProduct(wrapper.getProduct().getProductId());
-			
+				
 			stock.setDesirableAmount(wrapper.getDesirableAmount());
 			stock.setMinimumAmount(wrapper.getMinimumAmount());
-		
+			
 			stockService.insertOrUpdate(stock);
 		} 
-		
+			
 		catch(Exception e)
 		{
-			e.getMessage();
+				e.getMessage();
 		}
-		
+			
 		return new RedirectView(ViewRouteHelper.ROUTE);
 	}
-	
 }

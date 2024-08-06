@@ -23,3 +23,6 @@ Usuarios en general
 - Implementar un login con username y password.
 - Implementar un logout.
 
+A continuación, adjuntamos un PDF donde está explicado en mayor detalle todo lo que realizamos en este proyecto y cómo poder levantarlo para probarlo: [TPC Entrega Nº3.pdf](https://github.com/user-attachments/files/16513609/TPC.Entrega.N.3.pdf)
+
+
